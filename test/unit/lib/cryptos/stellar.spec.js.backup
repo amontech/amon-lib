@@ -1,0 +1,23 @@
+const StellarHelper = require('../../../lib/cryptos/stellar');
+
+const validStellarAddress = 'GCFSHLGJS4AHTJNQPUWTMUSNSKLURIF7JUCAMVIV546FYQMPQTJVHSLN';
+
+describe('StellarHelper', () => {
+
+  describe('validAddress', () => {
+
+    it('valid', () => {
+
+      expect(StellarHelper.validAddress(validStellarAddress)).to.be.true;
+
+    });
+
+    it('invalid', () => {
+
+      expect(StellarHelper.validAddress('fiezjfoiez')).to.be.false;
+
+    });
+
+  });
+
+});
