@@ -4,9 +4,9 @@ describe('module', () => {
 
   it('exports', () => {
 
-    expect(AmonLib.URI).to.exist;
-    expect(AmonLib.Crypto).to.exist;
-    expect(AmonLib.Cryptos).to.exist;
+    //expect(AmonLib.URI).to.exist;
+    expect(AmonLib.crypto).to.exist;
+    expect(AmonLib.coins).to.exist;
 
   });
 

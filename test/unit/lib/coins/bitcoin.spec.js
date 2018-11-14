@@ -1,4 +1,4 @@
-const BitcoinHelper = require('../../../../lib/cryptos/bitcoin');
+const BitcoinHelper = require('../../../../lib/coinHelpers/bitcoin');
 
 const validBitcoinRegtest = 'RP2aihaqqdZ7QgiYas2c1x2qnYN1tkD8Pt';
 const validBitcoinTestnet = 'mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe';
