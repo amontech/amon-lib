@@ -25,4 +25,30 @@ describe('EthereumHelper', () => {
 
   });
 
+  function addressExplorer(network, address, expectedUrl) {
+
+    it(`addressExplorerUrl ${network}`, () => {
+      const helper = new EthereumHelper({network});
+      expect(helper.addressExplorerUrl(address)).to.eq(expectedUrl);
+    });
+
+  }
+
+  addressExplorer('regtest', validEthereumAddress, null);
+  addressExplorer('testnet', validEthereumAddress, `https://kovan.etherscan.io/address/${validEthereumAddress}`);
+  addressExplorer('mainnet', validEthereumAddress, 'https://etherscan.io/address/'+validEthereumAddress);
+
+  function txExplorer(network, address, expectedUrl) {
+
+    it(`txExplorerUrl ${network}`, () => {
+      const helper = new EthereumHelper({network});
+      expect(helper.txExplorerUrl(address)).to.eq(expectedUrl);
+    });
+
+  }
+
+  txExplorer('regtest', validEthereumAddress, null);
+  txExplorer('testnet', validEthereumAddress, `https://kovan.etherscan.io/tx/${validEthereumAddress}`);
+  txExplorer('mainnet', validEthereumAddress, 'https://etherscan.io/tx/'+validEthereumAddress);
+
 });
