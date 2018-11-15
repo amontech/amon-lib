@@ -15,7 +15,6 @@ describe('BitcoinHelper', () => {
   });
 
   function validAddressNetwork(network, address, otherNetworkAddress) {
-
     describe(`validAddress ${network}`, () => {
 
       beforeEach(() => {
@@ -42,5 +41,32 @@ describe('BitcoinHelper', () => {
   validAddressNetwork('regtest', validBitcoinRegtest, validBitcoinTestnet)
   validAddressNetwork('testnet', validBitcoinTestnet, validBitcoinRegtest)
   validAddressNetwork('mainnet', validBitcoinMainnet, validBitcoinRegtest)
+
+
+  function addressExplorer(network, address, expectedUrl) {
+
+    it(`addressExplorerUrl ${network}`, () => {
+      const helper = new BitcoinHelper({network});
+      expect(helper.addressExplorerUrl(address)).to.eq(expectedUrl);
+    });
+
+  }
+
+  addressExplorer('regtest', validBitcoinRegtest, null);
+  addressExplorer('testnet', validBitcoinTestnet, `https://www.blocktrail.com/tBTC/address/${validBitcoinTestnet}`);
+  addressExplorer('mainnet', validBitcoinMainnet, 'https://live.blockcypher.com/btc/address/'+validBitcoinMainnet);
+
+  function txExplorer(network, address, expectedUrl) {
+
+    it(`txExplorerUrl ${network}`, () => {
+      const helper = new BitcoinHelper({network});
+      expect(helper.txExplorerUrl(address)).to.eq(expectedUrl);
+    });
+
+  }
+
+  txExplorer('regtest', validBitcoinRegtest, null);
+  txExplorer('testnet', validBitcoinTestnet, `https://www.blocktrail.com/tBTC/tx/${validBitcoinTestnet}`);
+  txExplorer('mainnet', validBitcoinMainnet, 'https://live.blockcypher.com/btc/tx/'+validBitcoinMainnet);
 
 });
