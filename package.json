@@ -9,8 +9,7 @@
   "scripts": {
     "test": "mocha -R spec ./test/test.config.js ./test/unit --recursive --timeout 15000",
     "doc": "jsdoc lib -d doc",
-    "deploy:doc": "gh-pages -d doc",
-    "translate": "node tools/translations"
+    "deploy:doc": "gh-pages -d doc"
   },
   "repository": {
     "type": "git",
@@ -24,15 +23,15 @@
   "homepage": "https://github.com/amontech/amon-lib#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "chai": "^4.1.2",
+    "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "coinstring": "^2.3.0",
-    "gh-pages": "^1.1.0",
+    "gh-pages": "^2.0.1",
     "jsdoc": "^3.5.5",
     "lodash": "^4.17.11",
-    "mocha": "^4.1.0",
-    "qs": "^6.5.1",
-    "sha.js": "^2.4.9",
-    "web3": "^0.20.4"
+    "mocha": "^5.2.0",
+    "qs": "^6.5.2",
+    "sha.js": "^2.4.11",
+    "web3": "^1.0.0-beta.36"
   }
 }
