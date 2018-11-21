@@ -42,30 +42,27 @@ const validAddress = amonLib.coins('BTC').validAddress('1FJ2PMM75HRh63TmoYLe6Wd9
 ```
 
 - Transaction block explorer url
-```
+```javascript
 const txExplorerUrl = amonLib.coins('BTC').txExplorerUrl('ad44d7ff0a7a1e433d00fbe9db1a8cf4cd509c3bb928c3963f2e4575fc4c5861');
 // txExplorerUrl = 'https://live.blockcypher.com/btc/tx/ad44d7ff0a7a1e433d00fbe9db1a8cf4cd509c3bb928c3963f2e4575fc4c5861'
 ```
 
 - Address block explorer url
-```
+```javascript
 const addressExplorerUrl = amonLib.coins('BTC').addressExplorerUrl('1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9');
 // addressExplorerUrl = 'https://live.blockcypher.com/btc/address/1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9'
 ```
 
 ### URI
 
-#### Import
-```js
-const URI = require('amon-lib').URI;
-```
-
 #### Parse URI
 
 ```js
-const str = 'bitcoin:mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe?amount=0.12';
-const uri = URI.parse(str);
-const { address, coinCode, amount } = uri; // => { mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe, BTC, 0.12 }
+const data = amonLib.URI.parse('bitcoin:mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe?amount=0.12');
+const { address, coinCode, amount } = data; 
+// address = mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe
+// coinCode = BTC
+// amount = 0.12
 ```
 
 #### Generate URI
@@ -77,8 +74,8 @@ const data = {
     amount: '0.12',
 };
 
-const uri = new URI(data);
-const str = uri.toString(); // => bitcoin:mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe?amount=0.12
+const str = amonLib.URI.stringify(data); 
+// str = bitcoin:mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe?amount=0.12
 ```
 
 
