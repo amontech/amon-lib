@@ -1,6 +1,6 @@
 {
   "name": "@amontech/amon-lib",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Common amon libraries",
   "main": "./lib/index.js",
   "directories": {
