@@ -1,5 +1,6 @@
 const AmonLib = require('../../../lib');
 const BitcoinHelper = require('../../../lib/coins/bitcoin');
+const BitcoinCashHelper = require('../../../lib/coins/bitcoinCash');
 const EthereumHelper = require('../../../lib/coins/ethereum');
 
 describe('module', () => {
@@ -14,7 +15,9 @@ describe('module', () => {
     expect(lib.crypto).to.exist;
 
     expect(lib.coinsInstances['BTC']).to.be.an.instanceof(BitcoinHelper);
+    expect(lib.coinsInstances['BCH']).to.be.an.instanceof(BitcoinCashHelper);
     expect(lib.coinsInstances['ETH']).to.be.an.instanceof(EthereumHelper);
+    expect(lib.coinsInstances['AMN'].constructor.name).to.eq('ERC20Token');
 
     const coinBTC = lib.coins('BTC');
     expect(coinBTC).to.be.an.instanceof(BitcoinHelper);
