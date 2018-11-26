@@ -4,7 +4,7 @@ const URI = require('../../../lib/uri');
 const validBitcoinTestnet = 'mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe';
 const validEthereumAddress = '0xc1912fee45d61c87cc5ea59dae31190fffff232d';
 
-describe.only('URI', () => {
+describe('URI', () => {
 
   beforeEach(() => {
 
