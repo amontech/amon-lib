@@ -1,6 +1,6 @@
 {
   "name": "@amontech/amon-lib",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Common amon libraries",
   "main": "./lib/index.js",
   "directories": {
@@ -26,6 +26,7 @@
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "coinstring": "^2.3.0",
+    "decimal.js": "^10.0.2",
     "gh-pages": "^2.0.1",
     "jsdoc": "^3.5.5",
     "lodash": "^4.17.11",

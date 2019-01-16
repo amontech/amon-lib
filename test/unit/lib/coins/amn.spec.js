@@ -6,7 +6,7 @@ const invalidEthereumAddress = '0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d';
 describe('AMNHelper', () => {
 
     before(() => {
-        this.amnHelper = new AMN();
+        this.amnHelper = new AMN({ network: 'testnet' });
     });
 
     describe('validAddress', () => {
