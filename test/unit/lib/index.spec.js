@@ -32,6 +32,18 @@ describe('module', () => {
     expect(coinETH).to.be.an.instanceof(EthereumHelper);
     expect(coinETH.opts.network).to.eq('testnet');
 
+    libTestnet.addERC20({
+      code: 'ERC',
+      decimals: 2,
+      testnetAddress: '0xA',
+      mainnetAddress: '0xB',
+    });
+
+    const customERC20 = libTestnet.coins('ERC');
+
+    expect(customERC20.constructor.COIN_DECIMALS).to.eq(2);
+    expect(customERC20.addressExplorerUrl('tx')).to.eq('https://kovan.etherscan.io/token/0xA?a=tx');
+
   });
 
 });
