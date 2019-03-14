@@ -85,6 +85,20 @@ const testData = {
       txExplorer: 'https://live.blockcypher.com/dash/tx/tx',
     },
   },
+  'ZEC': {
+    testnet: {
+      validAddress: 't2FyTsLjjdm4jeVwir4xzj7FAkUidbr1b4R',
+      invalidAddress: '0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d',
+      addressExplorer: 'https://explorer.testnet.z.cash/address/addr',
+      txExplorer: 'https://explorer.testnet.z.cash/tx/tx',
+    },
+    mainnet: {
+      validAddress: 't1aZvxRLCGVeMPFXvqfnBgHVEbi4c6g8MVa',
+      invalidAddress: '0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d',
+      addressExplorer: 'https://zcash.blockexplorer.com/address/addr',
+      txExplorer: 'https://zcash.blockexplorer.com/tx/tx',
+    },
+  },
 };
 
 describe('AllCoins tester', () => {

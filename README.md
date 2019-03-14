@@ -38,7 +38,8 @@ const amonLib = new AmonLib({ network: 'mainnet' });
 
 ### Coins
 
-Supported coins: `BTC`, `ETH`, `AMN`
+Supported coins: `BTC`, `ETH`, `AMN`, `DASH`, `ZEC`
+
 - Validate address
 ```javascript
 const validAddress = amonLib.coins('BTC').validAddress('1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9');
