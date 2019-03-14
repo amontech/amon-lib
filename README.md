@@ -1,4 +1,4 @@
-# AMON libraries
+ # AMON libraries
 
 [![CircleCI](https://circleci.com/gh/amontech/amon-lib/tree/master.svg?style=svg&circle-token=35a5a437b160dcd5edeb20b19b5b75fcebd7082d)](https://circleci.com/gh/amontech/amon-lib/tree/master)
 
@@ -7,6 +7,10 @@ This library is a set of common utilities used in various part of AMON projects.
 ## Documentation:
 
 [API Documentation](https://amontech.github.io/amon-lib/)
+
+## Publish on NPM
+- update the package version 
+- npm publish
 
 ## Install
 
@@ -95,3 +99,5 @@ const password = 'secretsanta';
 const hash = AmonLib.crypto.bcrypt.hash(password); // => 0a4f185e2483d5ea4e370c6b4ee31c51840f212a7c25de997509a8953d5fcb86
 const valid = AmonLib.crypto.bcrypt.verifyHash(password, hash); // => true
 ```
+
+

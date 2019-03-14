@@ -71,6 +71,20 @@ const testData = {
       txExplorer: 'https://etherscan.io/tx/tx',
     },
   },
+  'DASH': {
+    testnet: {
+      validAddress: '8ncpb32xr4qndKwMjAKtiJXYib2d28ZMku',
+      invalidAddress: '0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d',
+      addressExplorer: 'https://testnet-insight.dashevo.org/insight/address/addr',
+      txExplorer: 'https://testnet-insight.dashevo.org/insight/tx/tx',
+    },
+    mainnet: {
+      validAddress: 'XtvquBScqXx4iBhD8oxYc9cocCkWg9GvQZ',
+      invalidAddress: '0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d',
+      addressExplorer: 'https://live.blockcypher.com/dash/address/addr',
+      txExplorer: 'https://live.blockcypher.com/dash/tx/tx',
+    },
+  },
 };
 
 describe('AllCoins tester', () => {
