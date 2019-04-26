@@ -99,6 +99,16 @@ const testData = {
       txExplorer: 'https://zcash.blockexplorer.com/tx/tx',
     },
   },
+  'EUR': {
+    testnet: {
+      validAddress: 'IT60X0542811101000000123456',
+      invalidAddress: '0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d',
+    },
+    mainnet: {
+      validAddress: 'DE89370400440532013000',
+      invalidAddress: '0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d',
+    },
+  },
 };
 
 describe('AllCoins tester', () => {
@@ -136,11 +146,23 @@ describe('AllCoins tester', () => {
       describe('explorers', () => {
 
         it(`addressExplorerUrl`, () => {
-          expect(this.coin.addressExplorerUrl('addr')).to.eq(coinTestData.addressExplorer);
+
+          if(coinCode === 'EUR') {
+            expect( () => this.coin.addressExplorerUrl('addr')).to.throw('not implemented');
+          } else {
+            expect(this.coin.addressExplorerUrl('addr')).to.eq(coinTestData.addressExplorer);
+          }
+
         });
 
         it(`txExplorerUrl`, () => {
-          expect(this.coin.txExplorerUrl('tx')).to.eq(coinTestData.txExplorer);
+
+          if(coinCode === 'EUR') {
+            expect( () => this.coin.txExplorerUrl('tx')).to.throw('not implemented');
+          } else {
+            expect(this.coin.txExplorerUrl('tx')).to.eq(coinTestData.txExplorer);
+          }
+
         });
 
       });

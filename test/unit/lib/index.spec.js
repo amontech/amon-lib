@@ -5,6 +5,7 @@ const BitcoinCashHelper = require('../../../lib/coins/bitcoinCash');
 const EthereumHelper = require('../../../lib/coins/ethereum');
 const DashHelper = require('../../../lib/coins/dash');
 const ZcashHelper = require('../../../lib/coins/zcash');
+const EuroHelper = require('../../../lib/coins/euro');
 
 describe('module', () => {
 
@@ -25,6 +26,8 @@ describe('module', () => {
 
     expect(lib.coinsInstances['ETH']).to.be.an.instanceof(EthereumHelper);
     expect(lib.coinsInstances['AMN'].constructor.name).to.eq('ERC20Token');
+
+    expect(lib.coinsInstances['EUR']).to.be.an.instanceof(EuroHelper);
 
     const libTestnet = new AmonLib({network: 'testnet'});
     expect(libTestnet.opts.network).to.eq('testnet');
@@ -52,6 +55,10 @@ describe('module', () => {
     const coinETH = libTestnet.coins('ETH');
     expect(coinETH).to.be.an.instanceof(EthereumHelper);
     expect(coinETH.opts.network).to.eq('testnet');
+
+    const coinEUR = libTestnet.coins('EUR');
+    expect(coinEUR).to.be.an.instanceof(EuroHelper);
+    expect(coinEUR.opts.network).to.eq('testnet');
 
     libTestnet.addERC20({
       code: 'ERC',
