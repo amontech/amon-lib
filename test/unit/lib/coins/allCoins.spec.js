@@ -3,13 +3,13 @@ const AmonLib = require('../../../../lib');
 const testData = {
   'BTC': {
     testnet: {
-      validAddress: 'mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe',
+      validAddress: ['mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe'],
       invalidAddress: '1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9',
       addressExplorer: 'https://www.blocktrail.com/tBTC/address/addr',
       txExplorer: 'https://www.blocktrail.com/tBTC/tx/tx',
     },
     mainnet: {
-      validAddress: '1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9',
+      validAddress: ['1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9', 'bc1q7kuc84wc59svmage6xdntnkuumcsu7xlgfzleq3g4ml6r73vy5ysghv0yp'],
       invalidAddress: 'mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe',
       addressExplorer: 'https://live.blockcypher.com/btc/address/addr',
       txExplorer: 'https://live.blockcypher.com/btc/tx/tx',
@@ -17,27 +17,27 @@ const testData = {
   },
   'BCH': {
     testnet: {
-      validAddress: 'mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe',
+      validAddress: ['mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe'],
       invalidAddress: '1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9',
       addressExplorer: 'https://www.blocktrail.com/tBCC/address/addr',
       txExplorer: 'https://www.blocktrail.com/tBCC/tx/tx',
     },
     mainnet: {
-      validAddress: '1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9',
+      validAddress: ['1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9'],
       invalidAddress: 'mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe',
-      addressExplorer: 'https://live.blockcypher.com/bch/address/addr',
-      txExplorer: 'https://live.blockcypher.com/bch/tx/tx',
+      addressExplorer: 'https://blockdozer.com/address/addr',
+      txExplorer: 'https://blockdozer.com/tx/tx',
     },
   },
   'LTC': {
     testnet: {
-      validAddress: '2MzuHFTNqZZwPaxPv5cg3jkes28V3H1JTTY',
+      validAddress: ['2MzuHFTNqZZwPaxPv5cg3jkes28V3H1JTTY'],
       invalidAddress: '1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9',
       addressExplorer: 'https://chain.so/address/LTCTEST/addr',
       txExplorer: 'https://chain.so/tx/LTCTEST/tx',
     },
     mainnet: {
-      validAddress: 'LWSygPfS6FEiDqdj2xmVF8CSZJREo4LbKd',
+      validAddress: ['LWSygPfS6FEiDqdj2xmVF8CSZJREo4LbKd', 'ltc1qwjd8wgqdl3c3u2hkzuwxsc9ttcza27z5e4jfedtpd8yme7em8nxqyru8cd'],
       invalidAddress: 'mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe',
       addressExplorer: 'https://live.blockcypher.com/ltc/address/addr',
       txExplorer: 'https://live.blockcypher.com/ltc/tx/tx',
@@ -45,13 +45,13 @@ const testData = {
   },
   'ETH': {
     testnet: {
-      validAddress: '0xc1912fee45d61c87cc5ea59dae31190fffff232d',
+      validAddress: ['0xc1912fee45d61c87cc5ea59dae31190fffff232d'],
       invalidAddress: '0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d',
       addressExplorer: 'https://kovan.etherscan.io/address/addr',
       txExplorer: 'https://kovan.etherscan.io/tx/tx',
     },
     mainnet: {
-      validAddress: '0xc1912fee45d61c87cc5ea59dae31190fffff232d',
+      validAddress: ['0xc1912fee45d61c87cc5ea59dae31190fffff232d'],
       invalidAddress: '0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d',
       addressExplorer: 'https://etherscan.io/address/addr',
       txExplorer: 'https://etherscan.io/tx/tx',
@@ -59,13 +59,13 @@ const testData = {
   },
   'AMN': {
     testnet: {
-      validAddress: '0xc1912fee45d61c87cc5ea59dae31190fffff232d',
+      validAddress: ['0xc1912fee45d61c87cc5ea59dae31190fffff232d'],
       invalidAddress: '0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d',
       addressExplorer: 'https://kovan.etherscan.io/token/0x5f74dfd905a1d4af90a6d9fc137d6ff97c5d7b48?a=addr',
       txExplorer: 'https://kovan.etherscan.io/tx/tx',
     },
     mainnet: {
-      validAddress: '0xc1912fee45d61c87cc5ea59dae31190fffff232d',
+      validAddress: ['0xc1912fee45d61c87cc5ea59dae31190fffff232d'],
       invalidAddress: '0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d',
       addressExplorer: 'https://etherscan.io/token/0x737f98ac8ca59f2c68ad658e3c3d8c8963e40a4c?a=addr',
       txExplorer: 'https://etherscan.io/tx/tx',
@@ -73,13 +73,13 @@ const testData = {
   },
   'DASH': {
     testnet: {
-      validAddress: '8ncpb32xr4qndKwMjAKtiJXYib2d28ZMku',
+      validAddress: ['8ncpb32xr4qndKwMjAKtiJXYib2d28ZMku'],
       invalidAddress: '0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d',
       addressExplorer: 'https://testnet-insight.dashevo.org/insight/address/addr',
       txExplorer: 'https://testnet-insight.dashevo.org/insight/tx/tx',
     },
     mainnet: {
-      validAddress: 'XtvquBScqXx4iBhD8oxYc9cocCkWg9GvQZ',
+      validAddress: ['XtvquBScqXx4iBhD8oxYc9cocCkWg9GvQZ'],
       invalidAddress: '0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d',
       addressExplorer: 'https://live.blockcypher.com/dash/address/addr',
       txExplorer: 'https://live.blockcypher.com/dash/tx/tx',
@@ -87,13 +87,13 @@ const testData = {
   },
   'ZEC': {
     testnet: {
-      validAddress: 't2FyTsLjjdm4jeVwir4xzj7FAkUidbr1b4R',
+      validAddress: ['t2FyTsLjjdm4jeVwir4xzj7FAkUidbr1b4R'],
       invalidAddress: '0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d',
       addressExplorer: 'https://explorer.testnet.z.cash/address/addr',
       txExplorer: 'https://explorer.testnet.z.cash/tx/tx',
     },
     mainnet: {
-      validAddress: 't1aZvxRLCGVeMPFXvqfnBgHVEbi4c6g8MVa',
+      validAddress: ['t1aZvxRLCGVeMPFXvqfnBgHVEbi4c6g8MVa'],
       invalidAddress: '0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d',
       addressExplorer: 'https://zcash.blockexplorer.com/address/addr',
       txExplorer: 'https://zcash.blockexplorer.com/tx/tx',
@@ -101,11 +101,11 @@ const testData = {
   },
   'EUR': {
     testnet: {
-      validAddress: 'IT60X0542811101000000123456',
+      validAddress: ['IT60X0542811101000000123456'],
       invalidAddress: '0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d',
     },
     mainnet: {
-      validAddress: 'DE89370400440532013000',
+      validAddress: ['DE89370400440532013000'],
       invalidAddress: '0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d',
     },
   },
@@ -131,7 +131,11 @@ describe('AllCoins tester', () => {
 
         it('valid', () => {
 
-          expect(this.coin.validAddress(coinTestData.validAddress)).to.be.true;
+          coinTestData.validAddress.forEach(validAddress => {
+
+            expect(this.coin.validAddress(validAddress)).to.be.true;
+
+          });
 
         });
 
