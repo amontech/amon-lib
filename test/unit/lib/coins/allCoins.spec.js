@@ -79,7 +79,7 @@ const testData = {
       txExplorer: 'https://testnet-insight.dashevo.org/insight/tx/tx',
     },
     mainnet: {
-      validAddress: ['XtvquBScqXx4iBhD8oxYc9cocCkWg9GvQZ'],
+      validAddress: ['7oaa5TJFu8KFNgBLrpBNtE1Uh7VNa3oG9v'],
       invalidAddress: '0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d',
       addressExplorer: 'https://live.blockcypher.com/dash/address/addr',
       txExplorer: 'https://live.blockcypher.com/dash/tx/tx',
