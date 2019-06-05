@@ -5,28 +5,28 @@ const testData = {
     testnet: {
       validAddress: ['mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe'],
       invalidAddress: '1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9',
-      addressExplorer: 'https://www.blocktrail.com/tBTC/address/addr',
-      txExplorer: 'https://www.blocktrail.com/tBTC/tx/tx',
+      addressExplorer: 'https://www.blockchain.com/btctest/address/addr',
+      txExplorer: 'https://www.blockchain.com/btctest/tx/tx',
     },
     mainnet: {
       validAddress: ['1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9', 'bc1q7kuc84wc59svmage6xdntnkuumcsu7xlgfzleq3g4ml6r73vy5ysghv0yp'],
       invalidAddress: 'mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe',
-      addressExplorer: 'https://live.blockcypher.com/btc/address/addr',
-      txExplorer: 'https://live.blockcypher.com/btc/tx/tx',
+      addressExplorer: 'https://www.blockchain.com/btc/address/addr',
+      txExplorer: 'https://www.blockchain.com/btc/tx/tx',
     },
   },
   'BCH': {
     testnet: {
       validAddress: ['mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe'],
       invalidAddress: '1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9',
-      addressExplorer: 'https://www.blocktrail.com/tBCC/address/addr',
-      txExplorer: 'https://www.blocktrail.com/tBCC/tx/tx',
+      addressExplorer: 'https://www.blockchain.com/bchtest/address/addr',
+      txExplorer: 'https://www.blockchain.com/bchtest/tx/tx',
     },
     mainnet: {
       validAddress: ['1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9'],
       invalidAddress: 'mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe',
-      addressExplorer: 'https://blockdozer.com/address/addr',
-      txExplorer: 'https://blockdozer.com/tx/tx',
+      addressExplorer: 'https://www.blockchain.com/bch/address/addr',
+      txExplorer: 'https://www.blockchain.com/bch/tx/tx',
     },
   },
   'LTC': {
@@ -79,7 +79,7 @@ const testData = {
       txExplorer: 'https://testnet-insight.dashevo.org/insight/tx/tx',
     },
     mainnet: {
-      validAddress: ['XtvquBScqXx4iBhD8oxYc9cocCkWg9GvQZ'], //or 7oaa5TJFu8KFNgBLrpBNtE1Uh7VNa3oG9v
+      validAddress: ['XtvquBScqXx4iBhD8oxYc9cocCkWg9GvQZ', '7oaa5TJFu8KFNgBLrpBNtE1Uh7VNa3oG9v'],
       invalidAddress: '0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d',
       addressExplorer: 'https://live.blockcypher.com/dash/address/addr',
       txExplorer: 'https://live.blockcypher.com/dash/tx/tx',
