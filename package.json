@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "mocha -R spec ./test/test.config.js ./test/unit --recursive --timeout 15000",
+    "test": "mocha ./test/test.config.js ./test/unit --recursive --timeout 15000",
     "doc": "jsdoc lib -d doc",
     "deploy:doc": "gh-pages -d doc"
   },
@@ -27,13 +27,13 @@
     "chai-as-promised": "^7.1.1",
     "coinstring": "^2.3.0",
     "crypto-js": "^3.1.9-1",
-    "decimal.js": "^10.0.2",
+    "decimal.js": "^10.2.0",
     "gh-pages": "^2.0.1",
     "iban": "^0.0.12",
-    "jsdoc": "^3.5.5",
+    "jsdoc": "^3.6.2",
     "lodash": "^4.17.11",
-    "mocha": "^5.2.0",
-    "qs": "^6.5.2",
+    "mocha": "^6.1.4",
+    "qs": "^6.7.0",
     "sha.js": "^2.4.11"
   }
 }
