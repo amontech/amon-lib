@@ -102,17 +102,16 @@ const testData = {
   'EUR': {
     testnet: {
       validAddress: ['IT60X0542811101000000123456'],
-      invalidAddress: '0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d',
+      invalidAddress: 'LI89370400440532013000',
     },
     mainnet: {
       validAddress: ['DE89370400440532013000'],
-      invalidAddress: '0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d',
+      invalidAddress: 'LI89370400440532013000',
     },
   },
 };
 
 describe('AllCoins tester', () => {
-
 
   const testCoin = (network) => (coinCode) => {
 
@@ -133,7 +132,11 @@ describe('AllCoins tester', () => {
 
           coinTestData.validAddress.forEach(validAddress => {
 
-            expect(this.coin.validAddress(validAddress)).to.be.true;
+            if(coinCode === 'EUR') {
+
+              expect(this.coin.validAddress(validAddress, { bic: 'bic' }) ).to.be.true;
+
+            }
 
           });
 
@@ -141,7 +144,15 @@ describe('AllCoins tester', () => {
 
         it('invalid', () => {
 
-          expect(this.coin.validAddress(coinTestData.invalidAddress)).to.be.false;
+          expect(this.coin.validAddress(coinTestData.invalidAddress, { bic: 'bic' })).to.be.false;
+
+          if(coinCode === 'EUR') {
+
+            expect(this.coin.validAddress(coinTestData.validAddress[0], { bic: 'bi' }) ).to.be.false;
+            expect(this.coin.validAddress(coinTestData.validAddress[0], {}) ).to.be.false;
+            expect(this.coin.validAddress(coinTestData.validAddress[0]) ).to.be.false;
+
+          }
 
         });
 
