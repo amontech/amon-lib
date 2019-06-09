@@ -69,7 +69,7 @@ describe('module', () => {
 
     const customERC20 = libTestnet.coins('ERC');
 
-    expect(customERC20.constructor.COIN_DECIMALS).to.eq(2);
+    expect(customERC20.constructor.decimals).to.eq(2);
     expect(customERC20.addressExplorerUrl('tx')).to.eq('https://kovan.etherscan.io/token/0xA?a=tx');
 
   });
