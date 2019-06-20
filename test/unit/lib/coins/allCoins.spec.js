@@ -101,7 +101,7 @@ const testData = {
   },
   'EUR': {
     testnet: {
-      validAddress: ['IT60X0542811101000000123456'],
+      validAddress: ['IT60X0542811101000000123456', 'GB41REVO00997023855033'],
       invalidAddress: 'LI89370400440532013000',
     },
     mainnet: {
