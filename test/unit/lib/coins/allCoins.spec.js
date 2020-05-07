@@ -132,11 +132,7 @@ describe('AllCoins tester', () => {
 
           coinTestData.validAddress.forEach(validAddress => {
 
-            if(coinCode === 'EUR') {
-
-              expect(this.coin.validAddress(validAddress, { bic: 'bic' }) ).to.be.true;
-
-            }
+            expect(this.coin.validAddress(validAddress) ).to.be.true;
 
           });
 
@@ -146,15 +142,7 @@ describe('AllCoins tester', () => {
 
           coinTestData.invalidAddress.forEach(invalidAddress => {
 
-            expect(this.coin.validAddress(invalidAddress, { bic: 'bic' })).to.be.false;
-
-            if(coinCode === 'EUR') {
-
-              expect(this.coin.validAddress(invalidAddress, { bic: 'bi' }) ).to.be.false;
-              expect(this.coin.validAddress(invalidAddress, {}) ).to.be.false;
-              expect(this.coin.validAddress(invalidAddress) ).to.be.false;
-
-            }
+            expect(this.coin.validAddress(invalidAddress) ).to.be.false;
 
           });
 

@@ -1,6 +1,6 @@
 {
   "name": "@amontech/amon-lib",
-  "version": "2.6.3",
+  "version": "2.7.0",
   "description": "Common amon libraries",
   "main": "./lib/index.js",
   "directories": {
@@ -16,7 +16,7 @@
     "url": "git+https://github.com/amontech/amon-lib.git"
   },
   "author": "AMON TECH",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/amontech/amon-lib/issues"
   },
@@ -28,12 +28,12 @@
     "coinstring": "^2.3.0",
     "crypto-js": "^3.1.9-1",
     "decimal.js": "^10.2.0",
-    "gh-pages": "^2.0.1",
-    "iban": "^0.0.12",
-    "jsdoc": "^3.6.2",
-    "lodash": "^4.17.11",
-    "mocha": "^6.1.4",
-    "qs": "^6.7.0",
+    "gh-pages": "^2.2.0",
+    "iban": "^0.0.14",
+    "jsdoc": "^3.6.3",
+    "lodash": "^4.17.15",
+    "mocha": "^7.0.1",
+    "qs": "^6.9.1",
     "sha.js": "^2.4.11"
   }
 }
