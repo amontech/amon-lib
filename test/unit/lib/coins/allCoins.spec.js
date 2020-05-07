@@ -17,14 +17,14 @@ const testData = {
   },
   'BCH': {
     testnet: {
-      validAddress: ['mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe'],
-      invalidAddress: ['1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9'],
+      validAddress: ['mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe', 'qqdcsl6c879esyxyacmz7g6vtzwjjwtznsggspc457'],
+      invalidAddress: ['1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9', 'bitcoincash:qph5kuz78czq00e3t85ugpgd7xmer5kr7c5f6jdpwk'],
       addressExplorer: 'https://www.blockchain.com/bchtest/address/addr',
       txExplorer: 'https://www.blockchain.com/bchtest/tx/tx',
     },
     mainnet: {
-      validAddress: ['1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9'],
-      invalidAddress: ['mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe'],
+      validAddress: ['1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9', 'bitcoincash:qph5kuz78czq00e3t85ugpgd7xmer5kr7c5f6jdpwk'],
+      invalidAddress: ['mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe', 'qqdcsl6c879esyxyacmz7g6vtzwjjwtznsggspc457'],
       addressExplorer: 'https://www.blockchain.com/bch/address/addr',
       txExplorer: 'https://www.blockchain.com/bch/tx/tx',
     },
