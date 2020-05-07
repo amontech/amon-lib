@@ -1,6 +1,6 @@
 {
   "name": "@amontech/amon-lib",
-  "version": "2.7.0",
+  "version": "2.8.1",
   "description": "Common amon libraries",
   "main": "./lib/index.js",
   "directories": {
@@ -22,18 +22,18 @@
   },
   "homepage": "https://github.com/amontech/amon-lib#readme",
   "dependencies": {
+    "bchaddrjs": "github:julesGoullee/bchaddrjs",
     "bcryptjs": "^2.4.3",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
-    "coinstring": "^2.3.0",
-    "crypto-js": "^3.1.9-1",
+    "crypto-js": "^4.0.0",
     "decimal.js": "^10.2.0",
     "gh-pages": "^2.2.0",
     "iban": "^0.0.14",
-    "jsdoc": "^3.6.3",
+    "jsdoc": "^3.6.4",
     "lodash": "^4.17.15",
-    "mocha": "^7.0.1",
-    "qs": "^6.9.1",
+    "mocha": "^7.1.2",
+    "qs": "^6.9.4",
     "sha.js": "^2.4.11"
   }
 }
