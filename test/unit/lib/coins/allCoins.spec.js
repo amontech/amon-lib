@@ -109,6 +109,20 @@ const testData = {
       invalidAddress: ['LI89370400440532013000', 'GB41 REVO0 0997 0238 55033'],
     },
   },
+  'XRP': {
+    testnet: {
+      validAddress: ['r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ'],
+      invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
+      addressExplorer: 'https://test.bithomp.com/explorer/addr',
+      txExplorer: 'https://test.bithomp.com/explorer/tx',
+    },
+    mainnet: {
+      validAddress: ['r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ'],
+      invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
+      addressExplorer: 'https://bithomp.com/explorer/addr',
+      txExplorer: 'https://bithomp.com/explorer/tx',
+    },
+  },
 };
 
 describe('AllCoins tester', () => {
