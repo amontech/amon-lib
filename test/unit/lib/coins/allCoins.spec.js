@@ -111,13 +111,13 @@ const testData = {
   },
   'XRP': {
     testnet: {
-      validAddress: ['r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ'],
+      validAddress: ['r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', 'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=1', 'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=123455'],
       invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
       addressExplorer: 'https://test.bithomp.com/explorer/addr',
       txExplorer: 'https://test.bithomp.com/explorer/tx',
     },
     mainnet: {
-      validAddress: ['r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ'],
+      validAddress: ['r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', 'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=1', 'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=123455'],
       invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
       addressExplorer: 'https://bithomp.com/explorer/addr',
       txExplorer: 'https://bithomp.com/explorer/tx',
@@ -147,6 +147,24 @@ describe('AllCoins tester', () => {
           coinTestData.validAddress.forEach(validAddress => {
 
             expect(this.coin.validAddress(validAddress) ).to.be.true;
+
+            if(coinCode === 'XRP'){
+
+              const parsed = this.coin.parseTag(validAddress);
+
+              expect(parsed.address).to.exist;
+
+              if(validAddress.includes('?dt=') ){
+
+                expect(parsed.tag).to.not.be.undefined;
+
+              } else {
+
+                expect(parsed.tag).to.be.undefined;
+
+              }
+
+            }
 
           });
 
