@@ -144,7 +144,7 @@ describe('AllCoins tester', () => {
 
     describe(`${coinCode} (${network})`, () => {
 
-      before(() => {
+      beforeEach( () => {
 
         this.coin = lib.coins(coinCode);
 
@@ -157,29 +157,6 @@ describe('AllCoins tester', () => {
           coinTestData.validAddress.forEach(validAddress => {
 
             expect(this.coin.validAddress(validAddress) ).to.be.true;
-
-            if(coinCode === 'XRP'){
-
-              const parsed = this.coin.parseTag(validAddress);
-
-              expect(parsed.address).to.exist;
-
-              expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ');
-              expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', 'invalid-tag') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ');
-              expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', '123455') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=123455');
-              expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', '0') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=0');
-
-              if(validAddress.includes('?dt=') ){
-
-                expect(parsed.tag).to.not.be.undefined;
-
-              } else {
-
-                expect(parsed.tag).to.be.undefined;
-
-              }
-
-            }
 
           });
 
@@ -227,5 +204,66 @@ describe('AllCoins tester', () => {
 
   Object.keys(testData).forEach(testCoin('mainnet'));
   Object.keys(testData).forEach(testCoin('testnet'));
+
+  describe('XRP', () => {
+
+    beforeEach( () => {
+
+      this.coinCode = 'XRP';
+      const lib = new AmonLib({ network: 'mainnet' });
+
+      this.coin = lib.coins(this.coinCode);
+
+    });
+
+    it('Should parse tag', () => {
+
+      const parsedNoTag = this.coin.parseTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ');
+      expect(parsedNoTag.address).to.exist;
+      expect(parsedNoTag.tag).to.be.undefined;
+
+
+      const parsedWithTag1 = this.coin.parseTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=1');
+      expect(parsedWithTag1.address).to.exist;
+      expect(parsedWithTag1.tag).to.be.eq('1');
+
+      const parsedWithTag0 = this.coin.parseTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=0');
+      expect(parsedWithTag0.address).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ');
+      expect(parsedWithTag0.tag).to.be.eq('0');
+
+      const parsedWithTagLong = this.coin.parseTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=12345');
+      expect(parsedWithTagLong.address).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ');
+      expect(parsedWithTagLong.tag).to.be.eq('12345');
+
+      expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ');
+      expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', 'invalid-tag') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ');
+      expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', '123455') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=123455');
+      expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', '0') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=0');
+
+    });
+
+  });
+
+  describe('GBP', () => {
+
+    beforeEach(() => {
+
+      this.coinCode = 'GBP';
+      const lib = new AmonLib({network: 'mainnet'});
+
+      this.coin = lib.coins(this.coinCode);
+
+    });
+
+    it('Should parse IBAN to account number and sort code', () => {
+
+      expect(this.coin.parseIBAN('DE89370400440532013000') ).to.be.deep.eq({
+        accountNumber: '32013000',
+        sortCode: '004405'
+      });
+
+    });
+
+  });
 
 });
