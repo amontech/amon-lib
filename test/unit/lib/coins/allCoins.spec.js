@@ -109,6 +109,16 @@ const testData = {
       invalidAddress: ['LI89370400440532013000', 'GB41 REVO0 0997 0238 55033'],
     },
   },
+  'GBP': {
+    testnet: {
+      validAddress: ['IT60X0542811101000000123456', 'GB41REVO00997023855033'],
+      invalidAddress: ['LI89370400440532013000', 'IT 60X0 5428 1110 1000 0001 23456'],
+    },
+    mainnet: {
+      validAddress: ['DE89370400440532013000'],
+      invalidAddress: ['LI89370400440532013000', 'GB41 REVO0 0997 0238 55033'],
+    },
+  },
   'XRP': {
     testnet: {
       validAddress: ['r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', 'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=1', 'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=123455'],
@@ -191,7 +201,7 @@ describe('AllCoins tester', () => {
 
         it(`addressExplorerUrl`, () => {
 
-          if(coinCode === 'EUR') {
+          if(coinCode === 'EUR' || coinCode === 'GBP') {
             expect( () => this.coin.addressExplorerUrl('addr')).to.throw('not implemented');
           } else {
             expect(this.coin.addressExplorerUrl('addr')).to.eq(coinTestData.addressExplorer);
@@ -201,7 +211,7 @@ describe('AllCoins tester', () => {
 
         it(`txExplorerUrl`, () => {
 
-          if(coinCode === 'EUR') {
+          if(coinCode === 'EUR' || coinCode === 'GBP') {
             expect( () => this.coin.txExplorerUrl('tx')).to.throw('not implemented');
           } else {
             expect(this.coin.txExplorerUrl('tx')).to.eq(coinTestData.txExplorer);
