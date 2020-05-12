@@ -158,6 +158,29 @@ describe('AllCoins tester', () => {
 
             expect(this.coin.validAddress(validAddress) ).to.be.true;
 
+            if(coinCode === 'XRP'){
+
+              const parsed = this.coin.parseTag(validAddress);
+
+              expect(parsed.address).to.exist;
+
+              expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ');
+              expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', 'invalid-tag') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ');
+              expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', '123455') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=123455');
+              expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', '0') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=0');
+
+              if(validAddress.includes('?dt=') ){
+
+                expect(parsed.tag).to.not.be.undefined;
+
+              } else {
+
+                expect(parsed.tag).to.be.undefined;
+
+              }
+
+            }
+
           });
 
         });
