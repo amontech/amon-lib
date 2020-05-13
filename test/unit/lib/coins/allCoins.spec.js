@@ -264,6 +264,23 @@ describe('AllCoins tester', () => {
 
     });
 
+    it('Should valid recipient', () => {
+
+      expect(this.coin.validRecipient('123456', '12345678') ).to.be.true;
+      expect(this.coin.validRecipient('12345', '12345678') ).to.be.false;
+      expect(this.coin.validRecipient('123456', '1234567') ).to.be.false;
+      expect(this.coin.validRecipient('123456', '1234567a') ).to.be.false;
+      expect(this.coin.validRecipient('12345a', '12345678') ).to.be.false;
+
+    });
+
+    it('should valid address with recipient', () => {
+
+      expect(this.coin.validAddress(null, { sortCode: '123456', accountNumber: '12345678' }) ).to.be.true;
+      expect(this.coin.validAddress(null, { sortCode: '12345', accountNumber: '12345678' }) ).to.be.false;
+
+    });
+
   });
 
 });
