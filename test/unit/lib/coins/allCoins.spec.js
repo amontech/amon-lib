@@ -109,6 +109,16 @@ const testData = {
       invalidAddress: ['LI89370400440532013000', 'GB41 REVO0 0997 0238 55033'],
     },
   },
+  'GBP': {
+    testnet: {
+      validAddress: ['IT60X0542811101000000123456', 'GB41REVO00997023855033'],
+      invalidAddress: ['LI89370400440532013000', 'IT 60X0 5428 1110 1000 0001 23456'],
+    },
+    mainnet: {
+      validAddress: ['DE89370400440532013000'],
+      invalidAddress: ['LI89370400440532013000', 'GB41 REVO0 0997 0238 55033'],
+    },
+  },
   'XRP': {
     testnet: {
       validAddress: ['r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', 'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=1', 'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=123455'],
@@ -134,7 +144,7 @@ describe('AllCoins tester', () => {
 
     describe(`${coinCode} (${network})`, () => {
 
-      before(() => {
+      beforeEach( () => {
 
         this.coin = lib.coins(coinCode);
 
@@ -191,7 +201,7 @@ describe('AllCoins tester', () => {
 
         it(`addressExplorerUrl`, () => {
 
-          if(coinCode === 'EUR') {
+          if(coinCode === 'EUR' || coinCode === 'GBP') {
             expect( () => this.coin.addressExplorerUrl('addr')).to.throw('not implemented');
           } else {
             expect(this.coin.addressExplorerUrl('addr')).to.eq(coinTestData.addressExplorer);
@@ -201,7 +211,7 @@ describe('AllCoins tester', () => {
 
         it(`txExplorerUrl`, () => {
 
-          if(coinCode === 'EUR') {
+          if(coinCode === 'EUR' || coinCode === 'GBP') {
             expect( () => this.coin.txExplorerUrl('tx')).to.throw('not implemented');
           } else {
             expect(this.coin.txExplorerUrl('tx')).to.eq(coinTestData.txExplorer);
@@ -217,5 +227,83 @@ describe('AllCoins tester', () => {
 
   Object.keys(testData).forEach(testCoin('mainnet'));
   Object.keys(testData).forEach(testCoin('testnet'));
+
+  describe('XRP', () => {
+
+    beforeEach( () => {
+
+      this.coinCode = 'XRP';
+      const lib = new AmonLib({ network: 'mainnet' });
+
+      this.coin = lib.coins(this.coinCode);
+
+    });
+
+    it('Should parse tag', () => {
+
+      const parsedNoTag = this.coin.parseTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ');
+      expect(parsedNoTag.address).to.exist;
+      expect(parsedNoTag.tag).to.be.undefined;
+
+
+      const parsedWithTag1 = this.coin.parseTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=1');
+      expect(parsedWithTag1.address).to.exist;
+      expect(parsedWithTag1.tag).to.be.eq('1');
+
+      const parsedWithTag0 = this.coin.parseTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=0');
+      expect(parsedWithTag0.address).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ');
+      expect(parsedWithTag0.tag).to.be.eq('0');
+
+      const parsedWithTagLong = this.coin.parseTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=12345');
+      expect(parsedWithTagLong.address).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ');
+      expect(parsedWithTagLong.tag).to.be.eq('12345');
+
+      expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ');
+      expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', 'invalid-tag') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ');
+      expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', '123455') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=123455');
+      expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', '0') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=0');
+
+    });
+
+  });
+
+  describe('GBP', () => {
+
+    beforeEach(() => {
+
+      this.coinCode = 'GBP';
+      const lib = new AmonLib({network: 'mainnet'});
+
+      this.coin = lib.coins(this.coinCode);
+
+    });
+
+    it('Should parse IBAN to account number and sort code', () => {
+
+      expect(this.coin.parseIBAN('DE89370400440532013000') ).to.be.deep.eq({
+        accountNumber: '32013000',
+        sortCode: '004405'
+      });
+
+    });
+
+    it('Should valid recipient', () => {
+
+      expect(this.coin.validRecipient('123456', '12345678') ).to.be.true;
+      expect(this.coin.validRecipient('12345', '12345678') ).to.be.false;
+      expect(this.coin.validRecipient('123456', '1234567') ).to.be.false;
+      expect(this.coin.validRecipient('123456', '1234567a') ).to.be.false;
+      expect(this.coin.validRecipient('12345a', '12345678') ).to.be.false;
+
+    });
+
+    it('should valid address with recipient', () => {
+
+      expect(this.coin.validAddress(null, { sortCode: '123456', accountNumber: '12345678' }) ).to.be.true;
+      expect(this.coin.validAddress(null, { sortCode: '12345', accountNumber: '12345678' }) ).to.be.false;
+
+    });
+
+  });
 
 });
