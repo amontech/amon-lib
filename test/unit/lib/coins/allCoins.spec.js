@@ -9,7 +9,7 @@ const testData = {
       txExplorer: 'https://www.blockchain.com/btctest/tx/tx',
     },
     mainnet: {
-      validAddress: ['1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9', 'bc1q7kuc84wc59svmage6xdntnkuumcsu7xlgfzleq3g4ml6r73vy5ysghv0yp'],
+      validAddress: ['1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2', '3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy', 'bc1qzuu4gk3j47cuvygxysznzhf7agzd4lrufa7gmw'],
       invalidAddress: ['mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe'],
       addressExplorer: 'https://www.blockchain.com/btc/address/addr',
       txExplorer: 'https://www.blockchain.com/btc/tx/tx',
