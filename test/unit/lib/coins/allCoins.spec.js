@@ -158,7 +158,7 @@ describe('AllCoins tester', () => {
 
       describe('validate Address', () => {
 
-        it.only('valid', () => {
+        it('valid', () => {
 
           coinTestData.validAddress.forEach(validAddress => {
 
