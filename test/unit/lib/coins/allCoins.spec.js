@@ -43,7 +43,7 @@ const testData = {
       txExplorer: 'https://chain.so/tx/LTCTEST/tx',
     },
     mainnet: {
-      validAddress: ['LWSygPfS6FEiDqdj2xmVF8CSZJREo4LbKd', 'ltc1qwjd8wgqdl3c3u2hkzuwxsc9ttcza27z5e4jfedtpd8yme7em8nxqyru8cd'],
+      validAddress: ['LWSygPfS6FEiDqdj2xmVF8CSZJREo4LbKd', 'ltc1qwjd8wgqdl3c3u2hkzuwxsc9ttcza27z5e4jfedtpd8yme7em8nxqyru8cd', 'ltc1qwtalqrg3ha30csmt20667tczs46aafemp553s7'],
       invalidAddress: ['mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe'],
       addressExplorer: 'https://live.blockcypher.com/ltc/address/addr',
       txExplorer: 'https://live.blockcypher.com/ltc/tx/tx',
@@ -158,7 +158,7 @@ describe('AllCoins tester', () => {
 
       describe('validate Address', () => {
 
-        it('valid', () => {
+        it.only('valid', () => {
 
           coinTestData.validAddress.forEach(validAddress => {
 
