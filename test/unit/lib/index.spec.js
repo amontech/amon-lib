@@ -17,6 +17,8 @@ describe('module', () => {
     expect(lib.coins).to.exist;
     expect(AmonLib.crypto).to.exist;
     expect(lib.crypto).to.exist;
+    expect(lib.cardCountries).to.exist;
+    expect(lib.cardCountries.length).to.eq(31);
 
     expect(lib.coinsInstances['BTC']).to.be.an.instanceof(BitcoinHelper);
     expect(lib.coinsInstances['BCH']).to.be.an.instanceof(BitcoinCashHelper);
