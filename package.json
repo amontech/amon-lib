@@ -35,8 +35,5 @@
     "mocha": "^8.0.1",
     "qs": "^6.9.4",
     "sha.js": "^2.4.11"
-  },
-  "devDependencies": {
-    "npm-check-updates": "^9.0.1"
   }
 }
