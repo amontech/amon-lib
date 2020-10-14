@@ -1,6 +1,6 @@
 {
   "name": "@amontech/amon-lib",
-  "version": "2.9.3",
+  "version": "2.9.4",
   "description": "Common amon libraries",
   "main": "./lib/index.js",
   "directories": {
@@ -8,7 +8,6 @@
   },
   "scripts": {
     "test": "mocha ./test/test.config.js ./test/unit --recursive --timeout 15000",
-    "lint:json": "node ./test/jsonlint.js",
     "doc": "jsdoc lib -d doc",
     "deploy:doc": "gh-pages -d doc"
   },
@@ -31,14 +30,10 @@
     "decimal.js": "^10.2.0",
     "gh-pages": "^3.1.0",
     "iban": "^0.0.14",
-    "jsdoc": "^3.6.4",
-    "jsonlint": "^1.6.3",
-    "lodash": "^4.17.15",
-    "mocha": "^8.0.1",
+    "jsdoc": "^3.6.5",
+    "lodash": "^4.17.20",
+    "mocha": "^8.1.1",
     "qs": "^6.9.4",
     "sha.js": "^2.4.11"
-  },
-  "devDependencies": {
-    "npm-check-updates": "^9.0.1"
   }
 }

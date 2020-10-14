@@ -27,7 +27,3 @@ jobs:
           name: Tets
           command: npm run test
 
-      - run:
-          name: Lint Json
-          command: npm run lint:json
-
