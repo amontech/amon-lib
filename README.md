@@ -100,5 +100,3 @@ const password = 'secretsanta';
 const hash = AmonLib.crypto.bcrypt.hash(password); // => 0a4f185e2483d5ea4e370c6b4ee31c51840f212a7c25de997509a8953d5fcb86
 const valid = AmonLib.crypto.bcrypt.verifyHash(password, hash); // => true
 ```
-
-
