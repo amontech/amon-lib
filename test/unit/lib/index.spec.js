@@ -18,7 +18,7 @@ describe('module', () => {
     expect(AmonLib.crypto).to.exist;
     expect(lib.crypto).to.exist;
     expect(lib.countries).to.exist;
-    expect(lib.countries.length).to.eq(249);
+    expect(lib.countries.length).to.eq(250);
     expect(lib.cardCountries).to.exist;
     expect(lib.cardCountries.length).to.eq(31);
 
