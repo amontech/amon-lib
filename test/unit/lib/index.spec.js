@@ -78,4 +78,15 @@ describe('module', () => {
 
   });
 
+  it('Have error codes', () => {
+
+    expect(AmonLib.prototype.errorCodes).to.exist;
+    expect(AmonLib.prototype.errorCodes.api).to.exist;
+    expect(AmonLib.prototype.errorCodes.api.length).to.be.eq(60);
+    expect(AmonLib.prototype.errorCodes.api.find(error =>
+      !(error.code && error.description && Number.isInteger(error.status) )
+    ) ).not.to.be.exist;
+
+  });
+
 });
