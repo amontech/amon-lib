@@ -109,13 +109,8 @@
     },
     {
       "code": "two_factor_code_invalid",
-      "status": 400,
+      "status": 401,
       "description": "The two-factor authentication code you are trying to use is not valid."
-    },
-    {
-      "code": "two_factor_already_enable",
-      "status": 400,
-      "description": "The two-factor authentication is already enabled."
     },
     {
       "code": "two_factor_token_required",
@@ -126,11 +121,6 @@
       "code": "two_factor_code_required",
       "status": 401,
       "description": "The two-factor authentication code is required."
-    },
-    {
-      "code": "two_factor_token_invalid",
-      "status": 401,
-      "description": "The two-factor code you are trying to use is not valid."
     },
     {
       "code": "mobile_verification_token_required",
