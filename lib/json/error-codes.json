@@ -216,11 +216,6 @@
     {
       "code": "transaction_not_blocked",
       "status": 400,
-      "description": "Transaction must be blocked to perform this action."
-    },
-    {
-      "code": "transaction_not_blocked",
-      "status": 400,
       "description": "The transaction must have status blocked to perform this action."
     },
     {
