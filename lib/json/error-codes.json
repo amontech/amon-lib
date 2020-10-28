@@ -1,0 +1,307 @@
+{
+  "api": [
+    {
+      "code": "unknown_error",
+      "status": 500,
+      "description": "Unknown error."
+    },
+    {
+      "code": "unknown_error_code",
+      "status": 500,
+      "description": "Unknown error code."
+    },
+    {
+      "code": "bad_params",
+      "status": 400,
+      "description": "Bad parameters."
+    },
+    {
+      "code": "bad_request",
+      "status": 400,
+      "description": "Bad request."
+    },
+    {
+      "code": "daneel_disabled",
+      "status": 400,
+      "description": "Daneel is currently disabled, please try later."
+    },
+    {
+      "code": "not_found",
+      "status": 404,
+      "description": "Not found"
+    },
+    {
+      "code": "invalid_origin",
+      "status": 403,
+      "description": "Your origin is not allowed."
+    },
+    {
+      "code": "rate_limited",
+      "status": 429,
+      "description": "Too many requests, please try again later"
+    },
+
+
+    {
+      "code": "signup_disabled",
+      "status": 401,
+      "description": "The Signup is currently disabled, please try later."
+    },
+    {
+      "code": "already_exists",
+      "status": 400,
+      "description": "The Entity already exists."
+    },
+    {
+      "code": "access_denied",
+      "status": 401,
+      "description": "You are trying to access to a forbidden resource."
+    },
+    {
+      "code": "bad_credentials",
+      "status": 401,
+      "description": "Your credentials are invalid."
+    },
+    {
+      "code": "disabled_account",
+      "status": 400,
+      "description": "The Account is disabled."
+    },
+    {
+      "code": "user_not_exists",
+      "status": 400,
+      "description": "User not found."
+    },
+    {
+      "code": "invalid_token",
+      "status": 400,
+      "description": "The token you are trying to use is not valid."
+    },
+    {
+      "code": "token_expired",
+      "status": 400,
+      "description": "The token you are trying to use is expired, please login."
+    },
+    {
+      "code": "invalid_captcha",
+      "status": 400,
+      "description": "This request requires passing the captcha."
+    },
+    {
+      "code": "entity_too_large",
+      "status": 413,
+      "description": "The files you are trying to upload are too big."
+    },
+    {
+      "code": "password_should_be_different",
+      "status": 400,
+      "description": "The old and new password must be different."
+    },
+    {
+      "code": "two_factor_already_enable",
+      "status": 400,
+      "description": "The two-factor authentication is already enabled."
+    },
+    {
+      "code": "two_factor_not_enabled",
+      "status": 400,
+      "description": "The two-factor authentication must be enabled to perform this action."
+    },
+    {
+      "code": "two_factor_code_invalid",
+      "status": 401,
+      "description": "The two-factor authentication code you are trying to use is not valid."
+    },
+    {
+      "code": "two_factor_token_required",
+      "status": 401,
+      "description": "Please ask for a secret first."
+    },
+    {
+      "code": "two_factor_code_required",
+      "status": 401,
+      "description": "The two-factor authentication code is required."
+    },
+    {
+      "code": "mobile_verification_token_required",
+      "status": 401,
+      "description": "Please ask for a secret first."
+    },
+    {
+      "code": "exceed_account_associated",
+      "status": 400,
+      "description": "The mobile you are trying to use exceed the number of account associated, retry with other mobile."
+    },
+    {
+      "code": "user_already_deleted",
+      "status": 400,
+      "description": "Account is already deleted."
+    },
+    {
+      "code": "referral_already_set",
+      "status": 400,
+      "description": "Your referral is already defined."
+    },
+
+
+    {
+      "code": "kyc_not_pending_document",
+      "status": 400,
+      "description": "No new upload document expected."
+    },
+    {
+      "code": "kyc_document_already_exist",
+      "status": 400,
+      "description": "The document you are trying to upload already exists."
+    },
+    {
+      "code": "kyc_not_confirmed",
+      "status": 401,
+      "description": "You must do the document verification before."
+    },
+    {
+      "code": "max_proof_of_funds_reach",
+      "status": 400,
+      "description": "You already upload documents for this transaction."
+    },
+
+
+    {
+      "code": "unsupported_coin",
+      "status": 400,
+      "description": "You are trying to use a currency that we don't support."
+    },
+    {
+      "code": "wallet_already_exists",
+      "status": 400,
+      "description": "You already have a wallet for that currency."
+    },
+    {
+      "code": "wallet_platform_not_found",
+      "status": 400,
+      "description": "You are trying to use wallet without having the platform currency, please create platform currency before."
+    },
+    {
+      "code": "balance_not_enough",
+      "status": 400,
+      "description": "Your balance is not enough to perform this action."
+    },
+    {
+      "code": "balance_not_zero",
+      "status": 400,
+      "description": "Your balance must be zero to perform this action."
+    },
+    {
+      "code": "amount_too_low",
+      "status": 400,
+      "description": "The Amount must be bigger to perform this action."
+    },
+    {
+      "code": "amount_too_high",
+      "status": 400,
+      "description": "The Amount must be lower to perform this action."
+    },
+    {
+      "code": "invalid_address",
+      "status": 400,
+      "description": "Your are trying to use an invalid address."
+    },
+    {
+      "code": "invalid_recipient",
+      "status": 400,
+      "description": "TYour are trying to use an invalid recipient."
+    },
+
+
+    {
+      "code": "transaction_not_blocked",
+      "status": 400,
+      "description": "The transaction must have status blocked to perform this action."
+    },
+    {
+      "code": "transaction_not_blocked_or_pending",
+      "status": 400,
+      "description": "The transaction must have status blocked or pending to perform this action."
+    },
+    {
+      "code": "transaction_not_debited",
+      "status": 400,
+      "description": "The transaction must be debited to perform this action."
+    },
+    {
+      "code": "transaction_not_outgoing",
+      "status": 400,
+      "description": "The transaction type must be outgoing to perform this action."
+    },
+    {
+      "code": "transaction_status_invalid",
+      "status": 400,
+      "description": [
+        "The transaction status is incompatible with this action."
+      ]
+    },
+
+
+    {
+      "code": "exchange_exceed_daily_limit",
+      "status": 400,
+      "description": "You exceed your exchange daily limit."
+    },
+    {
+      "code": "exchange_disabled",
+      "status": 400,
+      "description": "Exchanges are temporary disabled, please try again later."
+    },
+    {
+      "code": "exchange_same_wallet",
+      "status": 400,
+      "description": "You are trying to exchange from and to the same wallet, wallets must be different."
+    },
+
+
+    {
+      "code": "unknown_pair",
+      "status": 400,
+      "description": "You are trying to use a pair code that we don't support."
+    },
+    {
+      "code": "pair_not_exchangeable",
+      "status": 400,
+      "description": "Pair temporary disabled, please try again later."
+    },
+    {
+      "code": "rate_unavailable",
+      "status": 400,
+      "description": "The rate for this pair is temporary disabled, please try again later"
+    },
+    {
+      "code": "rate_expired",
+      "status": 400,
+      "description": "The rate for this pair is expired."
+    },
+
+
+    {
+      "code": "investment_disabled",
+      "status": 400,
+      "description": "The Investment are temporary disabled, please try again later."
+    },
+
+
+    {
+      "code": "card_already_exist",
+      "status": 400,
+      "description": "You already have a card."
+    },
+    {
+      "code": "card_status_invalid",
+      "status": 400,
+      "description": "Your card status is not valid to perform this action."
+    },
+    {
+      "code": "invalid_card_cvc2",
+      "status": 400,
+      "description": "The Cvc2 you provided is invalid."
+    }
+  ]
+}
