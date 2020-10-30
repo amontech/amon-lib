@@ -18,7 +18,7 @@ describe('module', () => {
     expect(AmonLib.crypto).to.exist;
     expect(lib.crypto).to.exist;
     expect(lib.countries).to.exist;
-    expect(lib.countries.length).to.eq(249);
+    expect(lib.countries.length).to.eq(250);
     expect(lib.cardCountries).to.exist;
     expect(lib.cardCountries.length).to.eq(31);
 
@@ -75,6 +75,17 @@ describe('module', () => {
 
     expect(customERC20.constructor.decimals).to.eq(2);
     expect(customERC20.addressExplorerUrl('tx')).to.eq('https://kovan.etherscan.io/token/0xA?a=tx');
+
+  });
+
+  it('Have error codes', () => {
+
+    expect(AmonLib.prototype.errorCodes).to.exist;
+    expect(AmonLib.prototype.errorCodes.api).to.exist;
+    expect(AmonLib.prototype.errorCodes.api.length).to.be.eq(57);
+    expect(AmonLib.prototype.errorCodes.api.find(error =>
+      !(error.code && error.description && Number.isInteger(error.status) )
+    ) ).not.to.be.exist;
 
   });
 
