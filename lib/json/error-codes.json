@@ -38,7 +38,7 @@
     {
       "code": "rate_limited",
       "status": 429,
-      "description": "Too many requests, please try again later"
+      "description": "Too many requests, please try again later."
     },
 
 
@@ -209,7 +209,7 @@
     {
       "code": "invalid_recipient",
       "status": 400,
-      "description": "TYour are trying to use an invalid recipient."
+      "description": "Your are trying to use an invalid recipient."
     },
 
 
@@ -236,9 +236,7 @@
     {
       "code": "transaction_status_invalid",
       "status": 400,
-      "description": [
-        "The transaction status is incompatible with this action."
-      ]
+      "description": "The transaction status is incompatible with this action."
     },
 
 
@@ -272,7 +270,7 @@
     {
       "code": "rate_unavailable",
       "status": 400,
-      "description": "The rate for this pair is temporary disabled, please try again later"
+      "description": "The rate for this pair is temporary disabled, please try again later."
     },
     {
       "code": "rate_expired",
