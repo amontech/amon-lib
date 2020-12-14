@@ -300,6 +300,11 @@
       "code": "invalid_card_cvc2",
       "status": 400,
       "description": "The Cvc2 you provided is invalid."
+    },
+    {
+      "code": "card_delivery_invalid",
+      "status": 400,
+      "description": "We can't verify your delivery address."
     }
   ]
 }
