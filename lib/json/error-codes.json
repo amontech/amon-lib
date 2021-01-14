@@ -83,6 +83,11 @@
       "description": "The token you are trying to use is expired, please login."
     },
     {
+      "code": "active_token",
+      "status": 400,
+      "description": "You can’t remove an active token."
+    },
+    {
       "code": "invalid_captcha",
       "status": 400,
       "description": "This request requires passing the captcha."
