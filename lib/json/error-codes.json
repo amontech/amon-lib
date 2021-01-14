@@ -72,7 +72,7 @@
       "status": 400,
       "description": "User not found."
     },
-    {
+    {      
       "code": "invalid_token",
       "status": 400,
       "description": "The token you are trying to use is not valid."
@@ -83,7 +83,7 @@
       "description": "The token you are trying to use is expired, please login."
     },
     {
-      "code": "active_token",
+      "code": "token_in_use",
       "status": 400,
       "description": "You can’t remove an active token."
     },
