@@ -1,6 +1,6 @@
 {
   "name": "@amontech/amon-lib",
-  "version": "2.12.0",
+  "version": "2.12.1",
   "description": "Common amon libraries",
   "main": "./lib/index.js",
   "directories": {
@@ -10,6 +10,10 @@
     "test": "mocha ./test/test.config.js ./test/unit --recursive --timeout 15000",
     "doc": "jsdoc lib -d doc",
     "deploy:doc": "gh-pages -d doc"
+  },
+  "engines": {
+    "node": "14.x",
+    "npm": "6.x"
   },
   "repository": {
     "type": "git",
