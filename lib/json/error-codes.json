@@ -310,6 +310,11 @@
       "code": "card_delivery_invalid",
       "status": 400,
       "description": "We can't verify your delivery address."
+    },
+    {
+      "code": "prohibited_country",
+      "status": 400,
+      "description": "You're trying to log from prohibited country."
     }
   ]
 }
