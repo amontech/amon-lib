@@ -89,4 +89,18 @@ describe('module', () => {
 
   });
 
+  it('Have currencies', () => {
+
+    expect(AmonLib.prototype.currencies).to.exist;
+    expect(AmonLib.prototype.currencies.length).to.be.eq(436);
+
+  });
+
+  it('Have countries', () => {
+
+    expect(AmonLib.prototype.countries).to.exist;
+    expect(AmonLib.prototype.countries.length).to.be.eq(250);
+
+  });
+
 });
