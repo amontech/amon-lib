@@ -312,6 +312,11 @@
       "description": "We can't verify your delivery address."
     },
     {
+      "code": "tier_rate_limiting",
+      "status": 400,
+      "description": "Tier can be updated after 24 hours"
+    },
+    {
       "code": "prohibited_country",
       "status": 400,
       "description": "You're trying to log from prohibited country."
