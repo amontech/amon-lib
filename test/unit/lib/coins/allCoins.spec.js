@@ -5,8 +5,8 @@ const testData = {
     testnet: {
       validAddress: ['mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe'],
       invalidAddress: ['1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9'],
-      addressExplorer: 'https://www.blockchain.com/btctest/address/addr',
-      txExplorer: 'https://www.blockchain.com/btctest/tx/tx',
+      addressExplorer: 'https://www.blockchain.com/btc-testnet/address/addr',
+      txExplorer: 'https://www.blockchain.com/btc-testnet/tx/tx',
     },
     mainnet: {
       validAddress: [
@@ -25,8 +25,8 @@ const testData = {
     testnet: {
       validAddress: ['mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe', 'qqdcsl6c879esyxyacmz7g6vtzwjjwtznsggspc457'],
       invalidAddress: ['1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9', 'bitcoincash:qph5kuz78czq00e3t85ugpgd7xmer5kr7c5f6jdpwk'],
-      addressExplorer: 'https://www.blockchain.com/bchtest/address/addr',
-      txExplorer: 'https://www.blockchain.com/bchtest/tx/tx',
+      addressExplorer: 'https://www.blockchain.com/bch-testnet/address/addr',
+      txExplorer: 'https://www.blockchain.com/bch-testnet/tx/tx',
     },
     mainnet: {
       validAddress: ['1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9', 'bitcoincash:qph5kuz78czq00e3t85ugpgd7xmer5kr7c5f6jdpwk'],
