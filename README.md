@@ -1,4 +1,4 @@
- # AMON libraries
+# AMON libraries
 
 [![CircleCI](https://circleci.com/gh/amontech/amon-lib/tree/master.svg?style=svg&circle-token=35a5a437b160dcd5edeb20b19b5b75fcebd7082d)](https://circleci.com/gh/amontech/amon-lib/tree/master)
 
@@ -9,18 +9,21 @@ This library is a set of common utilities used in various part of AMON projects.
 [API Documentation](https://amontech.github.io/amon-lib/)
 
 ## Publish on NPM
-- update the package version 
+
+- update the package version
 - npm publish
 
 ## Install
 
 Install via npm or yarn
+
 ```bash
 npm i -S amon-lib
 yarn add amon-lib
 ```
 
 Import in your project
+
 ```javascript
 const AmonLib = require('amon-lib');
 import AmonLib from 'amon-lib';
@@ -41,18 +44,23 @@ const amonLib = new AmonLib({ network: 'mainnet' });
 Supported coins: `BTC`, `ETH`, `AMN`, `DASH`, `ZEC`
 
 - Validate address
+
 ```javascript
 const validAddress = amonLib.coins('BTC').validAddress('1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9');
 // validAddress = true
 ```
 
 - Transaction block explorer url
+
 ```javascript
-const txExplorerUrl = amonLib.coins('BTC').txExplorerUrl('ad44d7ff0a7a1e433d00fbe9db1a8cf4cd509c3bb928c3963f2e4575fc4c5861');
+const txExplorerUrl = amonLib
+  .coins('BTC')
+  .txExplorerUrl('ad44d7ff0a7a1e433d00fbe9db1a8cf4cd509c3bb928c3963f2e4575fc4c5861');
 // txExplorerUrl = 'https://live.blockcypher.com/btc/tx/ad44d7ff0a7a1e433d00fbe9db1a8cf4cd509c3bb928c3963f2e4575fc4c5861'
 ```
 
 - Address block explorer url
+
 ```javascript
 const addressExplorerUrl = amonLib.coins('BTC').addressExplorerUrl('1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9');
 // addressExplorerUrl = 'https://live.blockcypher.com/btc/address/1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9'
@@ -64,7 +72,7 @@ const addressExplorerUrl = amonLib.coins('BTC').addressExplorerUrl('1FJ2PMM75HRh
 
 ```js
 const data = amonLib.URI.parse('bitcoin:mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe?amount=0.12');
-const { address, coinCode, amount } = data; 
+const { address, coinCode, amount } = data;
 // address = mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe
 // coinCode = BTC
 // amount = 0.12
@@ -74,15 +82,14 @@ const { address, coinCode, amount } = data;
 
 ```js
 const data = {
-    coinCode: 'BTC',
-    address: 'mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe',
-    amount: '0.12',
+  coinCode: 'BTC',
+  address: 'mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe',
+  amount: '0.12',
 };
 
-const str = amonLib.URI.stringify(data); 
+const str = amonLib.URI.stringify(data);
 // str = bitcoin:mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe?amount=0.12
 ```
-
 
 ### Hash
 

@@ -1,7 +1,7 @@
 const AmonLib = require('../../../../lib');
 
 const testData = {
-  'BTC': {
+  BTC: {
     testnet: {
       validAddress: ['mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe'],
       invalidAddress: ['1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9'],
@@ -14,14 +14,14 @@ const testData = {
         'bc1q7kuc84wc59svmage6xdntnkuumcsu7xlgfzleq3g4ml6r73vy5ysghv0yp',
         '1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2',
         '3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy',
-        'bc1qzuu4gk3j47cuvygxysznzhf7agzd4lrufa7gmw'
+        'bc1qzuu4gk3j47cuvygxysznzhf7agzd4lrufa7gmw',
       ],
       invalidAddress: ['mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe'],
       addressExplorer: 'https://www.blockchain.com/btc/address/addr',
       txExplorer: 'https://www.blockchain.com/btc/tx/tx',
     },
   },
-  'BCH': {
+  BCH: {
     testnet: {
       validAddress: ['mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe', 'qqdcsl6c879esyxyacmz7g6vtzwjjwtznsggspc457'],
       invalidAddress: ['1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9', 'bitcoincash:qph5kuz78czq00e3t85ugpgd7xmer5kr7c5f6jdpwk'],
@@ -35,7 +35,7 @@ const testData = {
       txExplorer: 'https://www.blockchain.com/bch/tx/tx',
     },
   },
-  'LTC': {
+  LTC: {
     testnet: {
       validAddress: ['2MzuHFTNqZZwPaxPv5cg3jkes28V3H1JTTY'],
       invalidAddress: ['1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9'],
@@ -43,13 +43,17 @@ const testData = {
       txExplorer: 'https://chain.so/tx/LTCTEST/tx',
     },
     mainnet: {
-      validAddress: ['LWSygPfS6FEiDqdj2xmVF8CSZJREo4LbKd', 'ltc1qwjd8wgqdl3c3u2hkzuwxsc9ttcza27z5e4jfedtpd8yme7em8nxqyru8cd', 'ltc1qwtalqrg3ha30csmt20667tczs46aafemp553s7'],
-      invalidAddress: ['mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe'],
+      validAddress: [
+        'LWSygPfS6FEiDqdj2xmVF8CSZJREo4LbKd',
+        'ltc1qwjd8wgqdl3c3u2hkzuwxsc9ttcza27z5e4jfedtpd8yme7em8nxqyru8cd',
+        'ltc1qwtalqrg3ha30csmt20667tczs46aafemp553s7',
+      ],
+      invalidAddress: ['mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe', '3DnHd5ryvejJzAu9ZTGRQReH6HMX8qSDyL'],
       addressExplorer: 'https://live.blockcypher.com/ltc/address/addr',
       txExplorer: 'https://live.blockcypher.com/ltc/tx/tx',
     },
   },
-  'ETH': {
+  ETH: {
     testnet: {
       validAddress: ['0xc1912fee45d61c87cc5ea59dae31190fffff232d'],
       invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
@@ -63,7 +67,7 @@ const testData = {
       txExplorer: 'https://etherscan.io/tx/tx',
     },
   },
-  'AMN': {
+  AMN: {
     testnet: {
       validAddress: ['0xc1912fee45d61c87cc5ea59dae31190fffff232d'],
       invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
@@ -77,7 +81,7 @@ const testData = {
       txExplorer: 'https://etherscan.io/tx/tx',
     },
   },
-  'DASH': {
+  DASH: {
     testnet: {
       validAddress: ['8ncpb32xr4qndKwMjAKtiJXYib2d28ZMku'],
       invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
@@ -91,7 +95,7 @@ const testData = {
       txExplorer: 'https://live.blockcypher.com/dash/tx/tx',
     },
   },
-  'ZEC': {
+  ZEC: {
     testnet: {
       validAddress: ['t2FyTsLjjdm4jeVwir4xzj7FAkUidbr1b4R'],
       invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
@@ -105,7 +109,7 @@ const testData = {
       txExplorer: 'https://zcash.blockexplorer.com/tx/tx',
     },
   },
-  'EUR': {
+  EUR: {
     testnet: {
       validAddress: ['IT60X0542811101000000123456', 'GB41REVO00997023855033', 'GBXXCLJU04130780003083'],
       invalidAddress: ['LI89370400440532013000', 'IT 60X0 5428 1110 1000 0001 23456'],
@@ -115,7 +119,7 @@ const testData = {
       invalidAddress: ['LI89370400440532013000', 'GB41 REVO0 0997 0238 55033', 'GBXXCLJU04130780003083'],
     },
   },
-  'GBP': {
+  GBP: {
     testnet: {
       validAddress: ['IT60X0542811101000000123456', 'GB41REVO00997023855033'],
       invalidAddress: ['LI89370400440532013000', 'IT 60X0 5428 1110 1000 0001 23456'],
@@ -125,15 +129,23 @@ const testData = {
       invalidAddress: ['LI89370400440532013000', 'GB41 REVO0 0997 0238 55033'],
     },
   },
-  'XRP': {
+  XRP: {
     testnet: {
-      validAddress: ['r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', 'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=1', 'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=123455'],
+      validAddress: [
+        'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ',
+        'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=1',
+        'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=123455',
+      ],
       invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
       addressExplorer: 'https://test.bithomp.com/explorer/addr',
       txExplorer: 'https://test.bithomp.com/explorer/tx',
     },
     mainnet: {
-      validAddress: ['r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', 'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=1', 'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=123455'],
+      validAddress: [
+        'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ',
+        'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=1',
+        'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=123455',
+      ],
       invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
       addressExplorer: 'https://bithomp.com/explorer/addr',
       txExplorer: 'https://bithomp.com/explorer/tx',
@@ -142,115 +154,89 @@ const testData = {
 };
 
 describe('AllCoins tester', () => {
-
   const testCoin = (network) => (coinCode) => {
-
     const lib = new AmonLib({ network });
     const coinTestData = testData[coinCode][network];
 
     describe(`${coinCode} (${network})`, () => {
-
-      beforeEach( () => {
-
+      beforeEach(() => {
         this.coin = lib.coins(coinCode);
-
       });
 
       describe('validate Address', () => {
-
         it('valid', () => {
+          coinTestData.validAddress.forEach((validAddress) => {
+            expect(this.coin.validAddress(validAddress)).to.be.true;
 
-          coinTestData.validAddress.forEach(validAddress => {
-
-            expect(this.coin.validAddress(validAddress) ).to.be.true;
-
-            if(coinCode === 'XRP'){
-
+            if (coinCode === 'XRP') {
               const parsed = this.coin.parseTag(validAddress);
 
               expect(parsed.address).to.exist;
 
-              expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ');
-              expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', 'invalid-tag') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ');
-              expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', '123455') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=123455');
-              expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', '0') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=0');
+              expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ')).to.be.eq(
+                'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ'
+              );
+              expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', 'invalid-tag')).to.be.eq(
+                'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ'
+              );
+              expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', '123455')).to.be.eq(
+                'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=123455'
+              );
+              expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', '0')).to.be.eq(
+                'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=0'
+              );
 
-              if(validAddress.includes('?dt=') ){
-
+              if (validAddress.includes('?dt=')) {
                 expect(parsed.tag).to.not.be.undefined;
-
               } else {
-
                 expect(parsed.tag).to.be.undefined;
-
               }
-
             }
-
           });
-
         });
 
         it('invalid', () => {
-
-          coinTestData.invalidAddress.forEach(invalidAddress => {
-
-            expect(this.coin.validAddress(invalidAddress) ).to.be.false;
-
+          coinTestData.invalidAddress.forEach((invalidAddress) => {
+            expect(this.coin.validAddress(invalidAddress)).to.be.false;
           });
-
         });
-
       });
 
       describe('explorers', () => {
-
         it(`addressExplorerUrl`, () => {
-
-          if(coinCode === 'EUR' || coinCode === 'GBP') {
-            expect( () => this.coin.addressExplorerUrl('addr')).to.throw('not implemented');
+          if (coinCode === 'EUR' || coinCode === 'GBP') {
+            expect(() => this.coin.addressExplorerUrl('addr')).to.throw('not implemented');
           } else {
             expect(this.coin.addressExplorerUrl('addr')).to.eq(coinTestData.addressExplorer);
           }
-
         });
 
         it(`txExplorerUrl`, () => {
-
-          if(coinCode === 'EUR' || coinCode === 'GBP') {
-            expect( () => this.coin.txExplorerUrl('tx')).to.throw('not implemented');
+          if (coinCode === 'EUR' || coinCode === 'GBP') {
+            expect(() => this.coin.txExplorerUrl('tx')).to.throw('not implemented');
           } else {
             expect(this.coin.txExplorerUrl('tx')).to.eq(coinTestData.txExplorer);
           }
-
         });
-
       });
-
     });
-
   };
 
   Object.keys(testData).forEach(testCoin('mainnet'));
   Object.keys(testData).forEach(testCoin('testnet'));
 
   describe('XRP', () => {
-
-    beforeEach( () => {
-
+    beforeEach(() => {
       this.coinCode = 'XRP';
       const lib = new AmonLib({ network: 'mainnet' });
 
       this.coin = lib.coins(this.coinCode);
-
     });
 
     it('Should parse tag', () => {
-
       const parsedNoTag = this.coin.parseTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ');
       expect(parsedNoTag.address).to.exist;
       expect(parsedNoTag.tag).to.be.undefined;
-
 
       const parsedWithTag1 = this.coin.parseTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=1');
       expect(parsedWithTag1.address).to.exist;
@@ -264,52 +250,55 @@ describe('AllCoins tester', () => {
       expect(parsedWithTagLong.address).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ');
       expect(parsedWithTagLong.tag).to.be.eq('12345');
 
-      expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ');
-      expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', 'invalid-tag') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ');
-      expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', '123455') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=123455');
-      expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', '0') ).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=0');
-
+      expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ')).to.be.eq('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ');
+      expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', 'invalid-tag')).to.be.eq(
+        'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ'
+      );
+      expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', '123455')).to.be.eq(
+        'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=123455'
+      );
+      expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', '0')).to.be.eq(
+        'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=0'
+      );
     });
-
   });
 
   describe('GBP', () => {
-
     beforeEach(() => {
-
       this.coinCode = 'GBP';
-      const lib = new AmonLib({network: 'mainnet'});
+      const lib = new AmonLib({ network: 'mainnet' });
 
       this.coin = lib.coins(this.coinCode);
-
     });
 
     it('Should parse IBAN to account number and sort code', () => {
-
-      expect(this.coin.parseIBAN('DE89370400440532013000') ).to.be.deep.eq({
+      expect(this.coin.parseIBAN('DE89370400440532013000')).to.be.deep.eq({
         accountNumber: '32013000',
-        sortCode: '004405'
+        sortCode: '004405',
       });
-
     });
 
     it('Should valid recipient', () => {
-
-      expect(this.coin.validRecipient('123456', '12345678') ).to.be.true;
-      expect(this.coin.validRecipient('12345', '12345678') ).to.be.false;
-      expect(this.coin.validRecipient('123456', '1234567') ).to.be.false;
-      expect(this.coin.validRecipient('123456', '1234567a') ).to.be.false;
-      expect(this.coin.validRecipient('12345a', '12345678') ).to.be.false;
-
+      expect(this.coin.validRecipient('123456', '12345678')).to.be.true;
+      expect(this.coin.validRecipient('12345', '12345678')).to.be.false;
+      expect(this.coin.validRecipient('123456', '1234567')).to.be.false;
+      expect(this.coin.validRecipient('123456', '1234567a')).to.be.false;
+      expect(this.coin.validRecipient('12345a', '12345678')).to.be.false;
     });
 
     it('should valid address with recipient', () => {
-
-      expect(this.coin.validAddress(null, { sortCode: '123456', accountNumber: '12345678' }) ).to.be.true;
-      expect(this.coin.validAddress(null, { sortCode: '12345', accountNumber: '12345678' }) ).to.be.false;
-
+      expect(
+        this.coin.validAddress(null, {
+          sortCode: '123456',
+          accountNumber: '12345678',
+        })
+      ).to.be.true;
+      expect(
+        this.coin.validAddress(null, {
+          sortCode: '12345',
+          accountNumber: '12345678',
+        })
+      ).to.be.false;
     });
-
   });
-
 });
