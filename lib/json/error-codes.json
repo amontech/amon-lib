@@ -41,7 +41,6 @@
       "description": "Too many requests, please try again later."
     },
 
-
     {
       "code": "signup_disabled",
       "status": 401,
@@ -72,7 +71,7 @@
       "status": 400,
       "description": "User not found."
     },
-    {      
+    {
       "code": "invalid_token",
       "status": 400,
       "description": "The token you are trying to use is not valid."
@@ -148,7 +147,6 @@
       "description": "Your referral is already defined."
     },
 
-
     {
       "code": "kyc_not_pending_document",
       "status": 400,
@@ -169,7 +167,6 @@
       "status": 400,
       "description": "You already upload documents for this transaction."
     },
-
 
     {
       "code": "unsupported_coin",
@@ -217,7 +214,6 @@
       "description": "Your are trying to use an invalid recipient."
     },
 
-
     {
       "code": "transaction_not_blocked",
       "status": 400,
@@ -244,7 +240,6 @@
       "description": "The transaction status is incompatible with this action."
     },
 
-
     {
       "code": "exchange_exceed_daily_limit",
       "status": 400,
@@ -260,7 +255,6 @@
       "status": 400,
       "description": "You are trying to exchange from and to the same wallet, wallets must be different."
     },
-
 
     {
       "code": "unknown_pair",
@@ -283,13 +277,11 @@
       "description": "The rate for this pair is expired."
     },
 
-
     {
       "code": "investment_disabled",
       "status": 400,
       "description": "The Investment are temporary disabled, please try again later."
     },
-
 
     {
       "code": "card_already_exist",
