@@ -1,6 +1,6 @@
 {
   "name": "@amontech/amon-lib",
-  "version": "2.13.0",
+  "version": "2.13.1",
   "description": "Common amon libraries",
   "main": "./lib/index.js",
   "directories": {
@@ -14,8 +14,8 @@
     "deploy:doc": "gh-pages -d doc"
   },
   "engines": {
-    "node": "14.x",
-    "npm": "6.x"
+    "node": "16.x",
+    "npm": "8.x"
   },
   "repository": {
     "type": "git",
@@ -28,20 +28,20 @@
   },
   "homepage": "https://github.com/amontech/amon-lib#readme",
   "dependencies": {
-    "@ensdomains/address-encoder": "^0.2.8",
+    "@ensdomains/address-encoder": "^0.2.16",
     "bchaddrjs": "github:julesGoullee/bchaddrjs",
     "bcryptjs": "^2.4.3",
-    "chai": "^4.3.4",
+    "chai": "^4.3.6",
     "chai-as-promised": "^7.1.1",
     "crypto-js": "^4.1.1",
     "decimal.js": "^10.3.1",
     "gh-pages": "^3.2.3",
     "iban": "^0.0.14",
-    "jsdoc": "^3.6.7",
+    "jsdoc": "^3.6.10",
     "lodash": "^4.17.21",
-    "mocha": "^9.1.2",
-    "prettier": "^2.4.1",
-    "qs": "^6.10.1",
+    "mocha": "^9.2.0",
+    "prettier": "^2.5.1",
+    "qs": "^6.10.3",
     "sha.js": "^2.4.11"
   }
 }
