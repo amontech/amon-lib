@@ -148,6 +148,17 @@
     },
 
     {
+      "code": "questionnaire_already_exists",
+      "status": 400,
+      "description": "No update expected."
+    },
+
+    {
+      "code": "kyc_not_found",
+      "status": 400,
+      "description": "Kyc not exist."
+    },
+    {
       "code": "kyc_not_pending_document",
       "status": 400,
       "description": "No new upload document expected."
