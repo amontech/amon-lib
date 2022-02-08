@@ -78,7 +78,7 @@ describe('module', () => {
   it('Have error codes', () => {
     expect(AmonLib.prototype.errorCodes).to.exist;
     expect(AmonLib.prototype.errorCodes.api).to.exist;
-    expect(AmonLib.prototype.errorCodes.api.length).to.be.eq(61);
+    expect(AmonLib.prototype.errorCodes.api.length).to.be.eq(63);
     expect(
       AmonLib.prototype.errorCodes.api.find(
         (error) => !(error.code && error.description && Number.isInteger(error.status))
