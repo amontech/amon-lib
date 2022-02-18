@@ -1,4 +1,5 @@
 const AmonLib = require('../../../lib');
+const BinanceHelper = require('../../../lib/coins/binance');
 const BitcoinHelper = require('../../../lib/coins/bitcoin');
 const LitecoinHelper = require('../../../lib/coins/litecoin');
 const BitcoinCashHelper = require('../../../lib/coins/bitcoinCash');
@@ -61,6 +62,10 @@ describe('module', () => {
     const coinEUR = libTestnet.coins('EUR');
     expect(coinEUR).to.be.an.instanceof(EuroHelper);
     expect(coinEUR.opts.network).to.eq('testnet');
+
+    const coinBNB = libTestnet.coins('BNB');
+    expect(coinBNB).to.be.an.instanceof(BinanceHelper);
+    expect(coinBNB.opts.network).to.eq('testnet');
 
     libTestnet.addERC20({
       code: 'ERC',
