@@ -151,6 +151,20 @@ const testData = {
       txExplorer: 'https://bithomp.com/explorer/tx',
     },
   },
+  BNB: {
+    testnet: {
+      validAddress: ['0xc1912fee45d61c87cc5ea59dae31190fffff232d'],
+      invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
+      addressExplorer: 'https://testnet.bscscan.com/address/addr',
+      txExplorer: 'https://testnet.bscscan.com/tx/tx',
+    },
+    mainnet: {
+      validAddress: ['0xc1912fee45d61c87cc5ea59dae31190fffff232d'],
+      invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
+      addressExplorer: 'https://bscscan.com/address/addr',
+      txExplorer: 'https://bscscan.com/tx/tx',
+    },
+  },
 };
 
 describe('AllCoins tester', () => {
