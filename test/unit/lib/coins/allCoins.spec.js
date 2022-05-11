@@ -67,7 +67,7 @@ const testData = {
       txExplorer: 'https://etherscan.io/tx/tx',
     },
   },
-  AMN: {
+  ETHAMN: {
     testnet: {
       validAddress: ['0xc1912fee45d61c87cc5ea59dae31190fffff232d'],
       invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
@@ -163,6 +163,20 @@ const testData = {
       invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
       addressExplorer: 'https://bscscan.com/address/addr',
       txExplorer: 'https://bscscan.com/tx/tx',
+    },
+  },
+  MATIC: {
+    testnet: {
+      validAddress: ['0xc1912fee45d61c87cc5ea59dae31190fffff232d'],
+      invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
+      addressExplorer: 'https://mumbai.polygonscan.com/address/addr',
+      txExplorer: 'https://mumbai.polygonscan.com/tx/tx',
+    },
+    mainnet: {
+      validAddress: ['0xc1912fee45d61c87cc5ea59dae31190fffff232d'],
+      invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
+      addressExplorer: 'https://polygonscan.com/address/addr',
+      txExplorer: 'https://polygonscan.com/tx/tx',
     },
   },
 };

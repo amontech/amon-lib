@@ -93,6 +93,13 @@ describe('URI', () => {
         expect(coin.constructor.code).to.eq('ETH');
       });
 
+      it('MATIC', () => {
+        const coin = this.URI.getCoinFromPrefix('polygon');
+
+        expect(coin).to.exist;
+        expect(coin.constructor.code).to.eq('MATIC');
+      });
+
       it('AMN', () => {
         const coin = this.URI.getCoinFromPrefix('erc20');
 
@@ -137,11 +144,28 @@ describe('URI', () => {
         expect(coin.constructor.code).to.eq('BTC');
       });
 
+      it('MATIC', () => {
+        const coin = this.URI.getCoinFromCode('MATIC');
+        expect(coin).to.exist;
+        expect(coin.constructor.code).to.eq('MATIC');
+      });
+
       it('ETH', () => {
         const coin = this.URI.getCoinFromCode('ETH');
-
         expect(coin).to.exist;
         expect(coin.constructor.code).to.eq('ETH');
+      });
+
+      it('ETH ERC', () => {
+        const coin = this.URI.getCoinFromCode('ETHERC');
+        expect(coin).to.exist;
+        expect(coin.constructor.code).to.eq('ERC');
+      });
+
+      it('ETH MATIC', () => {
+        const coin = this.URI.getCoinFromCode('ETHMATIC');
+        expect(coin).to.exist;
+        expect(coin.constructor.code).to.eq('MATIC');
       });
 
       it('unknown', () => {
