@@ -29,7 +29,7 @@
   "homepage": "https://github.com/amontech/amon-lib#readme",
   "dependencies": {
     "@ensdomains/address-encoder": "^0.2.16",
-    "bchaddrjs": "github:julesGoullee/bchaddrjs",
+    "bchaddrjs": "github:amontech/bchaddrjs",
     "bcryptjs": "^2.4.3",
     "chai": "^4.3.6",
     "chai-as-promised": "^7.1.1",
