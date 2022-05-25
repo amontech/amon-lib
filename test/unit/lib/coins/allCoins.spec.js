@@ -83,7 +83,7 @@ const testData = {
   },
   DASH: {
     testnet: {
-      validAddress: ['8ncpb32xr4qndKwMjAKtiJXYib2d28ZMku'],
+      validAddress: ['8ncpb32xr4qndKwMjAKtiJXYib2d28ZMku', 'yMZsmKx2DorDvUkLtjtFKGezYfe1d3gQZf'],
       invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
       addressExplorer: 'https://testnet-insight.dashevo.org/insight/address/addr',
       txExplorer: 'https://testnet-insight.dashevo.org/insight/tx/tx',
