@@ -376,5 +376,4 @@ describe('AllCoins tester - tokens', () => {
 
   Object.keys(tokensTestData).forEach(testCoin('mainnet'));
   Object.keys(tokensTestData).forEach(testCoin('testnet'));
-
 });

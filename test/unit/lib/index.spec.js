@@ -73,15 +73,15 @@ describe('module', () => {
     expect(coinMATIC).to.be.an.instanceof(PolygonHelper);
     expect(coinMATIC.opts.network).to.eq('testnet');
 
-    const coinETH_MATIC = libTestnet.coins('ETH','MATIC');
+    const coinETH_MATIC = libTestnet.coins('ETH', 'MATIC');
     expect(coinETH_MATIC).to.be.an.instanceof(ERC20Helper);
     expect(coinETH_MATIC.opts.network).to.eq('testnet');
 
-    const coinETH_AMN = libTestnet.coins('ETH','AMN');
+    const coinETH_AMN = libTestnet.coins('ETH', 'AMN');
     expect(coinETH_AMN).to.be.an.instanceof(ERC20Helper);
     expect(coinETH_AMN.opts.network).to.eq('testnet');
 
-    const coinETH_TUSD = libTestnet.coins('ETH','TUSD');
+    const coinETH_TUSD = libTestnet.coins('ETH', 'TUSD');
     expect(coinETH_TUSD).to.be.an.instanceof(ERC20Helper);
     expect(coinETH_TUSD.opts.network).to.eq('testnet');
 
