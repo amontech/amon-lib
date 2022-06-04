@@ -30,7 +30,7 @@ describe('module', () => {
     expect(lib.coinsInstances['ZEC']).to.be.an.instanceof(ZcashHelper);
 
     expect(lib.coinsInstances['ETH']).to.be.an.instanceof(EthereumHelper);
-    // expect(lib.coinsInstances['AMN'].constructor.name).to.eq('ERC20Token');
+    expect(lib.coinsInstances['ETH_AMN'].constructor.name).to.eq('ERC20Token');
 
     expect(lib.coinsInstances['EUR']).to.be.an.instanceof(EuroHelper);
 
@@ -73,9 +73,17 @@ describe('module', () => {
     expect(coinMATIC).to.be.an.instanceof(PolygonHelper);
     expect(coinMATIC.opts.network).to.eq('testnet');
 
-    // const coinETH_MATIC = libTestnet.coins('ETH_MATIC');
-    // expect(coinETH_MATIC).to.be.an.instanceof(EthereumHelper);
-    // expect(coinETH_MATIC.opts.network).to.eq('testnet');
+    const coinETH_MATIC = libTestnet.coins('ETH','MATIC');
+    expect(coinETH_MATIC).to.be.an.instanceof(ERC20Helper);
+    expect(coinETH_MATIC.opts.network).to.eq('testnet');
+
+    const coinETH_AMN = libTestnet.coins('ETH','AMN');
+    expect(coinETH_AMN).to.be.an.instanceof(ERC20Helper);
+    expect(coinETH_AMN.opts.network).to.eq('testnet');
+
+    const coinETH_TUSD = libTestnet.coins('ETH','TUSD');
+    expect(coinETH_TUSD).to.be.an.instanceof(ERC20Helper);
+    expect(coinETH_TUSD.opts.network).to.eq('testnet');
 
     libTestnet.addERC20({
       code: 'ERC',
@@ -88,45 +96,6 @@ describe('module', () => {
 
     expect(customERC20.constructor.decimals).to.eq(2);
     expect(customERC20.addressExplorerUrl('tx')).to.eq('https://kovan.etherscan.io/token/0xA?a=tx');
-
-    const libTestnetTokens = new AmonLib({ network: 'testnet', isToken: true });
-    expect(libTestnetTokens.opts.network).to.eq('testnet');
-
-    const coinAMN = libTestnetTokens.coins('AMN');
-    expect(coinAMN).to.be.an.instanceof(ERC20Helper);
-    expect(coinAMN.opts.network).to.eq('testnet');
-
-    const coinTUSD = libTestnetTokens.coins('TUSD');
-    expect(coinTUSD).to.be.an.instanceof(ERC20Helper);
-    expect(coinTUSD.opts.network).to.eq('testnet');
-
-    // const coinLTC = libTestnet.coins('LTC');
-    // expect(coinLTC).to.be.an.instanceof(LitecoinHelper);
-    // expect(coinLTC.opts.network).to.eq('testnet');
-
-    // const coinDASH = libTestnet.coins('DASH');
-    // expect(coinDASH).to.be.an.instanceof(DashHelper);
-    // expect(coinDASH.opts.network).to.eq('testnet');
-
-    // const coinZEC = libTestnet.coins('ZEC');
-    // expect(coinZEC).to.be.an.instanceof(ZcashHelper);
-    // expect(coinZEC.opts.network).to.eq('testnet');
-
-    // const coinETH = libTestnet.coins('ETH');
-    // expect(coinETH).to.be.an.instanceof(EthereumHelper);
-    // expect(coinETH.opts.network).to.eq('testnet');
-
-    // const coinEUR = libTestnet.coins('EUR');
-    // expect(coinEUR).to.be.an.instanceof(EuroHelper);
-    // expect(coinEUR.opts.network).to.eq('testnet');
-
-    // const coinBNB = libTestnet.coins('BNB');
-    // expect(coinBNB).to.be.an.instanceof(BinanceHelper);
-    // expect(coinBNB.opts.network).to.eq('testnet');
-
-    // const coinMATIC = libTestnet.coins('MATIC');
-    // expect(coinMATIC).to.be.an.instanceof(PolygonHelper);
-    // expect(coinMATIC.opts.network).to.eq('testnet');
   });
 
   it('Have error codes', () => {

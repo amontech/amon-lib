@@ -167,7 +167,7 @@ const testData = {
   },
 };
 
-const testDataTokens = {
+const tokensTestData = {
   AMN: {
     testnet: {
       validAddress: ['0xc1912fee45d61c87cc5ea59dae31190fffff232d'],
@@ -186,8 +186,8 @@ const testDataTokens = {
     testnet: {
       validAddress: ['0xc1912fee45d61c87cc5ea59dae31190fffff232d'],
       invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
-      addressExplorer: 'https://mumbai.polygonscan.com/address/addr',
-      txExplorer: 'https://mumbai.polygonscan.com/tx/tx',
+      addressExplorer: 'https://etherscan.io/token/0xc1912fee45d61c87cc5ea59dae31190fffff232d?a=addr',
+      txExplorer: 'https://etherscan.io//tx/tx',
     },
     mainnet: {
       validAddress: ['0xc1912fee45d61c87cc5ea59dae31190fffff232d'],
@@ -197,7 +197,8 @@ const testDataTokens = {
     },
   },
 };
-describe('AllCoins tester', () => {
+
+describe('AllCoins tester - coins', () => {
   const testCoin = (network) => (coinCode) => {
     const lib = new AmonLib({ network });
     const coinTestData = testData[coinCode][network];
@@ -347,50 +348,25 @@ describe('AllCoins tester', () => {
   });
 });
 
-describe('AllCoins tester Token', () => {
-  const testCoin = (network) => (coinCode) => {
-    const lib = new AmonLib({ network, isToken: true });
-    const coinTestData = testDataTokens[coinCode][network];
+describe('AllCoins tester - tokens', () => {
+  const testCoin = (network) => (tokenCode) => {
+    const lib = new AmonLib({ network });
+    const tokenTestData = tokensTestData[tokenCode][network];
 
-    describe(`${coinCode} (${network})`, () => {
+    describe(`${tokenCode} (${network})`, () => {
       beforeEach(() => {
-        this.coin = lib.coins(coinCode);
+        this.coin = lib.coins('ETH', tokenCode);
       });
 
       describe('validate Address', () => {
         it('valid', () => {
-          coinTestData.validAddress.forEach((validAddress) => {
+          tokenTestData.validAddress.forEach((validAddress) => {
             expect(this.coin.validAddress(validAddress)).to.be.true;
-
-            if (coinCode === 'XRP') {
-              const parsed = this.coin.parseTag(validAddress);
-
-              expect(parsed.address).to.exist;
-
-              expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ')).to.be.eq(
-                'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ'
-              );
-              expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', 'invalid-tag')).to.be.eq(
-                'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ'
-              );
-              expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', '123455')).to.be.eq(
-                'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=123455'
-              );
-              expect(this.coin.formatTag('r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ', '0')).to.be.eq(
-                'r33dzSjAEr6Ficfd1fdeBTWmXvUSA3fJfQ?dt=0'
-              );
-
-              if (validAddress.includes('?dt=')) {
-                expect(parsed.tag).to.not.be.undefined;
-              } else {
-                expect(parsed.tag).to.be.undefined;
-              }
-            }
           });
         });
 
         it('invalid', () => {
-          coinTestData.invalidAddress.forEach((invalidAddress) => {
+          tokenTestData.invalidAddress.forEach((invalidAddress) => {
             expect(this.coin.validAddress(invalidAddress)).to.be.false;
           });
         });
@@ -398,6 +374,7 @@ describe('AllCoins tester Token', () => {
     });
   };
 
-  Object.keys(testDataTokens).forEach(testCoin('mainnet'));
-  Object.keys(testDataTokens).forEach(testCoin('testnet'));
+  Object.keys(tokensTestData).forEach(testCoin('mainnet'));
+  Object.keys(tokensTestData).forEach(testCoin('testnet'));
+
 });
