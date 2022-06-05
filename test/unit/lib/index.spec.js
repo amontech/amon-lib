@@ -30,7 +30,7 @@ describe('module', () => {
     expect(lib.coinsInstances['ZEC']).to.be.an.instanceof(ZcashHelper);
 
     expect(lib.coinsInstances['ETH']).to.be.an.instanceof(EthereumHelper);
-    expect(lib.coinsInstances['ETH_AMN'].constructor.name).to.eq('ERC20Token');
+    expect(lib.coinsInstances['_ETH_AMN'].constructor.name).to.eq('ERC20Token');
 
     expect(lib.coinsInstances['EUR']).to.be.an.instanceof(EuroHelper);
 
