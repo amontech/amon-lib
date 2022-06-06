@@ -92,7 +92,7 @@ describe('module', () => {
       mainnetAddress: '0xB',
     });
 
-    const customERC20 = libTestnet.coins('ERC');
+    const customERC20 = libTestnet.coins('ETH', 'ERC');
 
     expect(customERC20.constructor.decimals).to.eq(2);
     expect(customERC20.addressExplorerUrl('tx')).to.eq('https://kovan.etherscan.io/token/0xA?a=tx');
@@ -115,7 +115,7 @@ describe('module', () => {
 
     const erc = amonLib.coins('ETH', 'ERC');
     expect(erc.constructor.decimals).to.eq(0);
-    expect(erc.amountUnitToFloat('-1000000000')).to.eq('1000000000');
+    expect(erc.amountUnitToFloat('-1000000000')).to.eq('-1000000000');
   });
 
   it('Have error codes', () => {
