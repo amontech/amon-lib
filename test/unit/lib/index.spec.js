@@ -8,7 +8,7 @@ const DashHelper = require('../../../lib/coins/dash');
 const ZcashHelper = require('../../../lib/coins/zcash');
 const EuroHelper = require('../../../lib/coins/euro');
 const PolygonHelper = require('../../../lib/coins/polygon');
-const ERC20Helper = require('../../../lib/coins/ERC20');
+const ERC20Helper = require('../../../lib/coins/tokens/ERC20');
 
 describe('module', () => {
   it('AmonLib class', () => {
