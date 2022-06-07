@@ -1,0 +1,7 @@
+{
+  "USDT": {
+    "decimals": 6,
+    "testnet": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+    "mainnet": "0xe583769738b6dd4e7caf8451050d1948be717679"
+  }
+}
