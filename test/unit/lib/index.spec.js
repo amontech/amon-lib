@@ -96,11 +96,9 @@ describe('module', () => {
 
     expect(customERC20.constructor.decimals).to.eq(2);
     expect(customERC20.addressExplorerUrl('tx')).to.eq('https://kovan.etherscan.io/token/0xA?a=tx');
-
   });
 
   it('AmonLib class addERC20', () => {
-
     const amonLib = new AmonLib({ network: 'mainnet' });
     amonLib.addERC20({
       code: 'ERC',
