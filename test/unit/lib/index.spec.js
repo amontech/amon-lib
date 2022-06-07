@@ -7,6 +7,8 @@ const EthereumHelper = require('../../../lib/coins/ethereum');
 const DashHelper = require('../../../lib/coins/dash');
 const ZcashHelper = require('../../../lib/coins/zcash');
 const EuroHelper = require('../../../lib/coins/euro');
+const PolygonHelper = require('../../../lib/coins/polygon');
+const ERC20Helper = require('../../../lib/coins/ERC20');
 
 describe('module', () => {
   it('AmonLib class', () => {
@@ -28,7 +30,7 @@ describe('module', () => {
     expect(lib.coinsInstances['ZEC']).to.be.an.instanceof(ZcashHelper);
 
     expect(lib.coinsInstances['ETH']).to.be.an.instanceof(EthereumHelper);
-    expect(lib.coinsInstances['AMN'].constructor.name).to.eq('ERC20Token');
+    expect(lib.coinsInstances['_ETH_AMN'].constructor.name).to.eq('ERC20Token');
 
     expect(lib.coinsInstances['EUR']).to.be.an.instanceof(EuroHelper);
 
@@ -67,6 +69,22 @@ describe('module', () => {
     expect(coinBNB).to.be.an.instanceof(BinanceHelper);
     expect(coinBNB.opts.network).to.eq('testnet');
 
+    const coinMATIC = libTestnet.coins('MATIC');
+    expect(coinMATIC).to.be.an.instanceof(PolygonHelper);
+    expect(coinMATIC.opts.network).to.eq('testnet');
+
+    const coinETH_MATIC = libTestnet.coins('ETH', 'MATIC');
+    expect(coinETH_MATIC).to.be.an.instanceof(ERC20Helper);
+    expect(coinETH_MATIC.opts.network).to.eq('testnet');
+
+    const coinETH_AMN = libTestnet.coins('ETH', 'AMN');
+    expect(coinETH_AMN).to.be.an.instanceof(ERC20Helper);
+    expect(coinETH_AMN.opts.network).to.eq('testnet');
+
+    const coinETH_TUSD = libTestnet.coins('ETH', 'TUSD');
+    expect(coinETH_TUSD).to.be.an.instanceof(ERC20Helper);
+    expect(coinETH_TUSD.opts.network).to.eq('testnet');
+
     libTestnet.addERC20({
       code: 'ERC',
       decimals: 2,
@@ -74,10 +92,28 @@ describe('module', () => {
       mainnetAddress: '0xB',
     });
 
-    const customERC20 = libTestnet.coins('ERC');
+    const customERC20 = libTestnet.coins('ETH', 'ERC');
 
     expect(customERC20.constructor.decimals).to.eq(2);
     expect(customERC20.addressExplorerUrl('tx')).to.eq('https://kovan.etherscan.io/token/0xA?a=tx');
+  });
+
+  it('AmonLib class addERC20', () => {
+    const amonLib = new AmonLib({ network: 'mainnet' });
+    amonLib.addERC20({
+      code: 'ERC',
+      decimals: 0,
+      testnetAddress: '0x945ac907cf021a6bcd07852bb3b8c087051706a9',
+      mainnetAddress: '0x0000000000000000000000000000000000000000',
+    });
+
+    const eth = amonLib.coins('ETH');
+    expect(eth.constructor.decimals).to.eq(18);
+    expect(eth.amountUnitToFloat('-1000000000')).to.eq('-0.000000001');
+
+    const erc = amonLib.coins('ETH', 'ERC');
+    expect(erc.constructor.decimals).to.eq(0);
+    expect(erc.amountUnitToFloat('-1000000000')).to.eq('-1000000000');
   });
 
   it('Have error codes', () => {

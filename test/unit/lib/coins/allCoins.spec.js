@@ -67,20 +67,6 @@ const testData = {
       txExplorer: 'https://etherscan.io/tx/tx',
     },
   },
-  AMN: {
-    testnet: {
-      validAddress: ['0xc1912fee45d61c87cc5ea59dae31190fffff232d'],
-      invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
-      addressExplorer: 'https://kovan.etherscan.io/token/0x5f74dfd905a1d4af90a6d9fc137d6ff97c5d7b48?a=addr',
-      txExplorer: 'https://kovan.etherscan.io/tx/tx',
-    },
-    mainnet: {
-      validAddress: ['0xc1912fee45d61c87cc5ea59dae31190fffff232d'],
-      invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
-      addressExplorer: 'https://etherscan.io/token/0x737f98ac8ca59f2c68ad658e3c3d8c8963e40a4c?a=addr',
-      txExplorer: 'https://etherscan.io/tx/tx',
-    },
-  },
   DASH: {
     testnet: {
       validAddress: ['8ncpb32xr4qndKwMjAKtiJXYib2d28ZMku', 'yMZsmKx2DorDvUkLtjtFKGezYfe1d3gQZf'],
@@ -165,9 +151,54 @@ const testData = {
       txExplorer: 'https://bscscan.com/tx/tx',
     },
   },
+  MATIC: {
+    testnet: {
+      validAddress: ['0xc1912fee45d61c87cc5ea59dae31190fffff232d'],
+      invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
+      addressExplorer: 'https://mumbai.polygonscan.com/address/addr',
+      txExplorer: 'https://mumbai.polygonscan.com/tx/tx',
+    },
+    mainnet: {
+      validAddress: ['0xc1912fee45d61c87cc5ea59dae31190fffff232d'],
+      invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
+      addressExplorer: 'https://polygonscan.com/address/addr',
+      txExplorer: 'https://polygonscan.com/tx/tx',
+    },
+  },
 };
 
-describe('AllCoins tester', () => {
+const tokensTestData = {
+  AMN: {
+    testnet: {
+      validAddress: ['0xc1912fee45d61c87cc5ea59dae31190fffff232d'],
+      invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
+      addressExplorer: 'https://kovan.etherscan.io/token/0x5f74dfd905a1d4af90a6d9fc137d6ff97c5d7b48?a=addr',
+      txExplorer: 'https://kovan.etherscan.io/tx/tx',
+    },
+    mainnet: {
+      validAddress: ['0xc1912fee45d61c87cc5ea59dae31190fffff232d'],
+      invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
+      addressExplorer: 'https://etherscan.io/token/0x737f98ac8ca59f2c68ad658e3c3d8c8963e40a4c?a=addr',
+      txExplorer: 'https://etherscan.io/tx/tx',
+    },
+  },
+  MATIC: {
+    testnet: {
+      validAddress: ['0xc1912fee45d61c87cc5ea59dae31190fffff232d'],
+      invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
+      addressExplorer: 'https://etherscan.io/token/0xc1912fee45d61c87cc5ea59dae31190fffff232d?a=addr',
+      txExplorer: 'https://etherscan.io//tx/tx',
+    },
+    mainnet: {
+      validAddress: ['0xc1912fee45d61c87cc5ea59dae31190fffff232d'],
+      invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
+      addressExplorer: 'https://polygonscan.com/address/addr',
+      txExplorer: 'https://polygonscan.com/tx/tx',
+    },
+  },
+};
+
+describe('AllCoins tester - coins', () => {
   const testCoin = (network) => (coinCode) => {
     const lib = new AmonLib({ network });
     const coinTestData = testData[coinCode][network];
@@ -315,4 +346,34 @@ describe('AllCoins tester', () => {
       ).to.be.false;
     });
   });
+});
+
+describe('AllCoins tester - tokens', () => {
+  const testCoin = (network) => (tokenCode) => {
+    const lib = new AmonLib({ network });
+    const tokenTestData = tokensTestData[tokenCode][network];
+
+    describe(`${tokenCode} (${network})`, () => {
+      beforeEach(() => {
+        this.coin = lib.coins('ETH', tokenCode);
+      });
+
+      describe('validate Address', () => {
+        it('valid', () => {
+          tokenTestData.validAddress.forEach((validAddress) => {
+            expect(this.coin.validAddress(validAddress)).to.be.true;
+          });
+        });
+
+        it('invalid', () => {
+          tokenTestData.invalidAddress.forEach((invalidAddress) => {
+            expect(this.coin.validAddress(invalidAddress)).to.be.false;
+          });
+        });
+      });
+    });
+  };
+
+  Object.keys(tokensTestData).forEach(testCoin('mainnet'));
+  Object.keys(tokensTestData).forEach(testCoin('testnet'));
 });
