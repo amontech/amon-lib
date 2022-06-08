@@ -115,25 +115,25 @@ const testData = {
   },
 };
 
-describe('AllCoins tester - coins', async () => {
+describe('AllCoins tester - coins', () => {
   const testCoin = (network) => (tokenCode) => {
     const lib = new AmonLib({ network });
     const tokensTestData = testData[tokenCode][network];
 
-    describe(`${tokenCode} (${network})`, async () => {
+    describe(`${tokenCode} (${network})`, () => {
       beforeEach(() => {
         this.coin = lib.coins(tokenCode);
       });
 
-      describe('validate Address', async () => {
+      describe('validate Address', () => {
         it('valid', async () => {
-          const res = await this.coin.validAddress(tokensTestData.validAddress);
-          await expect(res).to.be.true;
+          const response = await this.coin.validAddress(tokensTestData.validAddress);
+          expect(response).to.be.true;
         });
 
         it('invalid', async () => {
-          const res = await this.coin.validAddress(tokensTestData.invalidAddress);
-          expect(res).to.be.false;
+          const response = await this.coin.validAddress(tokensTestData.invalidAddress);
+          expect(response).to.be.false;
         });
       });
 
