@@ -43,20 +43,28 @@
   },
   "BNB": {
     "USDT": {
-      "decimals": 18
+      "decimals": 18,
+      "testnet": "0x377533d0e68a22cf180205e9c9ed980f74bc5050",
+      "mainnet": "0x55d398326f99059ff775485246999027b3197955"
     }
   },
   "MATIC": {
     "USDT": {
-      "decimals": 6
+      "decimals": 6,
+      "testnet": "0x0000000000000000000000000000000000000000",
+      "mainnet": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f"
     }
   },
   "TRX": {
     "USDT": {
-      "decimals": 6
+      "decimals": 6,
+      "testnet": "TWjh6QpNCgJvWytkHzUUsR5bLBmm3MvwTu",
+      "mainnet": "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"
     },
     "USDC": {
-      "decimals": 6
+      "decimals": 6,
+      "testnet": "TQaFXc4TDnUcZX4Y1LCWKW7hyrHdU9ukTK",
+      "mainnet": "TEkxiTehnzSmSe2XqrBj4w32RUN966rdz8"
     }
   }
 }
