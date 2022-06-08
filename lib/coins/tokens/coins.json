@@ -51,19 +51,19 @@
   "MATIC": {
     "USDT": {
       "decimals": 6,
-      "testnet": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
-      "mainnet": "0xe583769738b6dd4e7caf8451050d1948be717679"
+      "testnet": "0x0000000000000000000000000000000000000000",
+      "mainnet": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f"
     }
   },
   "TRX": {
     "USDT": {
       "decimals": 6,
-      "testnet": "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t",
+      "testnet": "TWjh6QpNCgJvWytkHzUUsR5bLBmm3MvwTu",
       "mainnet": "TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t"
     },
     "USDC": {
       "decimals": 6,
-      "testnet": "TEkxiTehnzSmSe2XqrBj4w32RUN966rdz8",
+      "testnet": "TQaFXc4TDnUcZX4Y1LCWKW7hyrHdU9ukTK",
       "mainnet": "TEkxiTehnzSmSe2XqrBj4w32RUN966rdz8"
     }
   }
