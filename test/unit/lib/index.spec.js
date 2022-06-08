@@ -85,8 +85,9 @@ describe('module', () => {
     expect(coinETH_TUSD).to.be.an.instanceof(ERC20EthereumHelper);
     expect(coinETH_TUSD.opts.network).to.eq('testnet');
 
-    libTestnet.addERC20({
-      code: 'ERC',
+    libTestnet.addToken({
+      coinCode: 'ETH',
+      tokenCode: 'ERC',
       decimals: 2,
       testnetAddress: '0xA',
       mainnetAddress: '0xB',
@@ -98,10 +99,11 @@ describe('module', () => {
     expect(customERC20.addressExplorerUrl('tx')).to.eq('https://kovan.etherscan.io/token/0xA?a=tx');
   });
 
-  it('AmonLib class addERC20', () => {
+  it('AmonLib class addToken', () => {
     const amonLib = new AmonLib({ network: 'mainnet' });
-    amonLib.addERC20({
-      code: 'ERC',
+    amonLib.addToken({
+      coinCode: 'ETH',
+      tokenCode: 'ERC',
       decimals: 0,
       testnetAddress: '0x945ac907cf021a6bcd07852bb3b8c087051706a9',
       mainnetAddress: '0x0000000000000000000000000000000000000000',
