@@ -8,7 +8,7 @@ const DashHelper = require('../../../lib/coins/dash');
 const ZcashHelper = require('../../../lib/coins/zcash');
 const EuroHelper = require('../../../lib/coins/euro');
 const PolygonHelper = require('../../../lib/coins/polygon');
-const ERC20Helper = require('../../../lib/coins/ERC20');
+const ERC20EthereumHelper = require('../../../lib/coins/tokens/ERC20Ethereum');
 
 describe('module', () => {
   it('AmonLib class', () => {
@@ -30,7 +30,7 @@ describe('module', () => {
     expect(lib.coinsInstances['ZEC']).to.be.an.instanceof(ZcashHelper);
 
     expect(lib.coinsInstances['ETH']).to.be.an.instanceof(EthereumHelper);
-    expect(lib.coinsInstances['_ETH_AMN'].constructor.name).to.eq('ERC20Token');
+    expect(lib.coinsInstances['_ETH_AMN'].constructor.name).to.eq('ERC20EthereumToken');
 
     expect(lib.coinsInstances['EUR']).to.be.an.instanceof(EuroHelper);
 
@@ -74,19 +74,20 @@ describe('module', () => {
     expect(coinMATIC.opts.network).to.eq('testnet');
 
     const coinETH_MATIC = libTestnet.coins('ETH', 'MATIC');
-    expect(coinETH_MATIC).to.be.an.instanceof(ERC20Helper);
+    expect(coinETH_MATIC).to.be.an.instanceof(ERC20EthereumHelper);
     expect(coinETH_MATIC.opts.network).to.eq('testnet');
 
     const coinETH_AMN = libTestnet.coins('ETH', 'AMN');
-    expect(coinETH_AMN).to.be.an.instanceof(ERC20Helper);
+    expect(coinETH_AMN).to.be.an.instanceof(ERC20EthereumHelper);
     expect(coinETH_AMN.opts.network).to.eq('testnet');
 
     const coinETH_TUSD = libTestnet.coins('ETH', 'TUSD');
-    expect(coinETH_TUSD).to.be.an.instanceof(ERC20Helper);
+    expect(coinETH_TUSD).to.be.an.instanceof(ERC20EthereumHelper);
     expect(coinETH_TUSD.opts.network).to.eq('testnet');
 
-    libTestnet.addERC20({
-      code: 'ERC',
+    libTestnet.addToken({
+      coinCode: 'ETH',
+      tokenCode: 'ERC',
       decimals: 2,
       testnetAddress: '0xA',
       mainnetAddress: '0xB',
@@ -98,10 +99,11 @@ describe('module', () => {
     expect(customERC20.addressExplorerUrl('tx')).to.eq('https://kovan.etherscan.io/token/0xA?a=tx');
   });
 
-  it('AmonLib class addERC20', () => {
+  it('AmonLib class addToken', () => {
     const amonLib = new AmonLib({ network: 'mainnet' });
-    amonLib.addERC20({
-      code: 'ERC',
+    amonLib.addToken({
+      coinCode: 'ETH',
+      tokenCode: 'ERC',
       decimals: 0,
       testnetAddress: '0x945ac907cf021a6bcd07852bb3b8c087051706a9',
       mainnetAddress: '0x0000000000000000000000000000000000000000',

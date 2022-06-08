@@ -192,8 +192,8 @@ const tokensTestData = {
     mainnet: {
       validAddress: ['0xc1912fee45d61c87cc5ea59dae31190fffff232d'],
       invalidAddress: ['0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d'],
-      addressExplorer: 'https://polygonscan.com/address/addr',
-      txExplorer: 'https://polygonscan.com/tx/tx',
+      addressExplorer: 'https://etherscan.com/address/addr',
+      txExplorer: 'https://etherscan.com/tx/tx',
     },
   },
 };
@@ -355,7 +355,7 @@ describe('AllCoins tester - tokens', () => {
 
     describe(`${tokenCode} (${network})`, () => {
       beforeEach(() => {
-        this.coin = lib.coins('ETH', tokenCode);
+        this.coin = lib.coins(`_ETH_${tokenCode}`);
       });
 
       describe('validate Address', () => {
