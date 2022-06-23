@@ -11,7 +11,13 @@ describe('Token Helper', () => {
     this.lib = new AmonLib();
   });
 
-  it('Get Token - ERC20: { USDC, USDT, MATIC, ERC, DAI, QASH }', () => {
+  it('Get Token - ERC20: { AMY, AMN, USDC, USDT, MATIC, ERC, DAI, QASH }', () => {
+    const ERC20EthereumAMY = this.tokenHelper.getToken('ETH', 'AMY');
+    expect(ERC20EthereumAMY.code).to.eq('AMY');
+    expect(ERC20EthereumAMY.isToken).to.eq(true);
+    expect(ERC20EthereumAMY.decimals).to.eq(18);
+    expect(this.lib.coinsInstances['_ETH_AMY']).to.be.an.instanceof(ERC20EthereumHelper);
+
     const ERC20EthereumAMN = this.tokenHelper.getToken('ETH', 'AMN');
     expect(ERC20EthereumAMN.code).to.eq('AMN');
     expect(ERC20EthereumAMN.isToken).to.eq(true);

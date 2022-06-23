@@ -93,11 +93,11 @@ describe('URI', () => {
         expect(coin.constructor.code).to.eq('ETH');
       });
 
-      it('AMN', () => {
+      it('AMY', () => {
         const coin = this.URI.getCoinFromPrefix('erc20');
 
         expect(coin).to.exist;
-        expect(coin.constructor.code).to.eq('AMN');
+        expect(coin.constructor.code).to.eq('AMY');
       });
 
       it('unknown', () => {

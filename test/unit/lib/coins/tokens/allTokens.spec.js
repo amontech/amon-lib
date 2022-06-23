@@ -15,6 +15,20 @@ const testData = {
       txExplorer: 'https://etherscan.io/tx/tx',
     },
   },
+  _ETH_AMY: {
+    testnet: {
+      validAddress: '0xc1912fee45d61c87cc5ea59dae31190fffff232d',
+      invalidAddress: '0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d',
+      addressExplorer: 'https://kovan.etherscan.io/token/0x5f74dfd905a1d4af90a6d9fc137d6ff97c5d7b48?a=addr',
+      txExplorer: 'https://kovan.etherscan.io/tx/tx',
+    },
+    mainnet: {
+      validAddress: '0xc1912fee45d61c87cc5ea59dae31190fffff232d',
+      invalidAddress: '0xC1912fEE45d61C87Cc5EA59DaE31190FFFFf232d',
+      addressExplorer: 'https://etherscan.io/token/0x737f98ac8ca59f2c68ad658e3c3d8c8963e40a4c?a=addr',
+      txExplorer: 'https://etherscan.io/tx/tx',
+    },
+  },
   _ETH_TUSD: {
     testnet: {
       validAddress: '0x0000000000000000000000000000000000000000',

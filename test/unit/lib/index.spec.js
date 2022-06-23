@@ -31,6 +31,7 @@ describe('module', () => {
 
     expect(lib.coinsInstances['ETH']).to.be.an.instanceof(EthereumHelper);
     expect(lib.coinsInstances['_ETH_AMN'].constructor.name).to.eq('ERC20EthereumToken');
+    expect(lib.coinsInstances['_ETH_AMY'].constructor.name).to.eq('ERC20EthereumToken');
 
     expect(lib.coinsInstances['EUR']).to.be.an.instanceof(EuroHelper);
 
@@ -80,6 +81,10 @@ describe('module', () => {
     const coinETH_AMN = libTestnet.coins('ETH', 'AMN');
     expect(coinETH_AMN).to.be.an.instanceof(ERC20EthereumHelper);
     expect(coinETH_AMN.opts.network).to.eq('testnet');
+
+    const coinETH_AMY = libTestnet.coins('ETH', 'AMY');
+    expect(coinETH_AMY).to.be.an.instanceof(ERC20EthereumHelper);
+    expect(coinETH_AMY.opts.network).to.eq('testnet');
 
     const coinETH_TUSD = libTestnet.coins('ETH', 'TUSD');
     expect(coinETH_TUSD).to.be.an.instanceof(ERC20EthereumHelper);

@@ -41,7 +41,7 @@ const amonLib = new AmonLib({ network: 'mainnet' });
 
 ### Coins
 
-Supported coins: `BTC`, `ETH`, `AMN`, `DASH`, `ZEC`
+Supported coins: `BTC`, `ETH`, `AMN`, `AMY`, `DASH`, `ZEC`
 
 - Validate address
 
