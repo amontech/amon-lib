@@ -3,7 +3,7 @@ const AmonLib = require('../../../../lib');
 const testData = {
   BTC: {
     testnet: {
-      validAddress: ['mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe'],
+      validAddress: ['mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe', 'tb1qlchfzpma0ldphvl96w7as7ddf0gchnkjqjkyyn'],
       invalidAddress: ['1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9'],
       addressExplorer: 'https://www.blockchain.com/btc-testnet/address/addr',
       txExplorer: 'https://www.blockchain.com/btc-testnet/tx/tx',
@@ -15,6 +15,7 @@ const testData = {
         '1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2',
         '3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy',
         'bc1qzuu4gk3j47cuvygxysznzhf7agzd4lrufa7gmw',
+        'bc1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3qccfmv3',
       ],
       invalidAddress: ['mkzgubTA5Ahi6BPSkE6MN9pEafRutznkMe'],
       addressExplorer: 'https://www.blockchain.com/btc/address/addr',
@@ -212,7 +213,7 @@ const tokensTestData = {
   },
 };
 
-describe('AllCoins tester - coins', () => {
+describe.only('AllCoins tester - coins', () => {
   const testCoin = (network) => (coinCode) => {
     const lib = new AmonLib({ network });
     const coinTestData = testData[coinCode][network];
