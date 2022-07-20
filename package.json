@@ -1,6 +1,6 @@
 {
   "name": "@amontech/amon-lib",
-  "version": "2.13.9",
+  "version": "2.14.0",
   "description": "Common amon libraries",
   "main": "./lib/index.js",
   "directories": {
@@ -36,7 +36,7 @@
     "chai-as-promised": "^7.1.1",
     "crypto-js": "^4.1.1",
     "decimal.js": "^10.3.1",
-    "dotenv": "^16.0.1",
+    "dotenv": "8.2.0",
     "gh-pages": "^3.2.3",
     "iban": "^0.0.14",
     "jsdoc": "^3.6.10",
