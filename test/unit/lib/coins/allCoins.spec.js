@@ -38,7 +38,7 @@ const testData = {
   },
   LTC: {
     testnet: {
-      validAddress: ['2MzuHFTNqZZwPaxPv5cg3jkes28V3H1JTTY'],
+      validAddress: ['2MzuHFTNqZZwPaxPv5cg3jkes28V3H1JTTY', 'tltc1q8fvkl6ngpplhngwhzh030kt3c9cd3r0xjwxgl8'],
       invalidAddress: ['1FJ2PMM75HRh63TmoYLe6Wd9apxNK3aem9'],
       addressExplorer: 'https://chain.so/address/LTCTEST/addr',
       txExplorer: 'https://chain.so/tx/LTCTEST/tx',
@@ -213,7 +213,7 @@ const tokensTestData = {
   },
 };
 
-describe.only('AllCoins tester - coins', () => {
+describe('AllCoins tester - coins', () => {
   const testCoin = (network) => (coinCode) => {
     const lib = new AmonLib({ network });
     const coinTestData = testData[coinCode][network];
