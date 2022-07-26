@@ -4,8 +4,7 @@
   "description": "Common amon libraries",
   "main": "./lib/index.js",
   "directories": {
-    "lib": "lib",
-    "test": "test"
+    "lib": "lib"
   },
   "scripts": {
     "test": "mocha ./test/test.config.js ./test/unit --recursive --timeout 15000",
@@ -45,6 +44,5 @@
     "prettier": "^2.5.1",
     "qs": "^6.10.3",
     "sha.js": "^2.4.11"
-  },
-  "devDependencies": {}
+  }
 }
