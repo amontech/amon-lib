@@ -3,3 +3,4 @@
 /node_modules
 /doc
 .DS_Store
+.git/
